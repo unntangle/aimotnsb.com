@@ -1,13 +1,15 @@
 import type { Metadata } from "next";
-import { Mail, MapPin, Phone } from "lucide-react";
+import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 import PageHero from "@/components/layout/PageHero";
 import SectionHeading from "@/components/ui/SectionHeading";
-import { gcMembers, img, leaders, stateOfficeBearers } from "@/lib/site";
+import Newsletter from "@/components/home/Newsletter";
+import { committeeMembers, img, stateOfficeBearers } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Office Bearers & Committee Members",
+  title: "Members",
   description:
-    "National and state office bearers of the All India Manufacturers' Organisation, and the standing committees that run its work.",
+    "Office bearers and committee members of the All India Manufacturers' Organisation, Tamil Nadu State Board.",
 };
 
 const tints = [
@@ -17,10 +19,10 @@ const tints = [
   "from-navy-600 to-navy-700",
 ];
 
+/** Initials for the avatar disc, ignoring honorifics. */
 function initials(name: string) {
-  if (name.toLowerCase().startsWith("to be")) return "·";
   return name
-    .replace(/^Shri\s+/i, "")
+    .replace(/^(Dr|Mr|Mrs|Ms|Shri|Smt)\.?\s+/i, "")
     .split(" ")
     .filter(Boolean)
     .slice(0, 2)
@@ -29,172 +31,95 @@ function initials(name: string) {
     .toUpperCase();
 }
 
-export default function OfficeBearersPage() {
+export default function MembersPage() {
   return (
     <>
       <PageHero
-        eyebrow="Governance"
-        title="Office Bearers & Committee Members"
-        intro="AIMO's office bearers are working promoters, elected annually by the membership. Below are the national team, the state team, and the standing committees that carry the work between meetings."
+        eyebrow="Know AIMO"
+        title="Members"
+        intro="The office bearers and committee members of the AIMO Tamil Nadu State Board, elected by the membership to carry the work of the Board."
         image={img.boardroom}
-        crumb="Office Bearers"
+        crumb="Members"
       />
 
-      {/* National */}
+      {/* ---------------------------- Office bearers ---------------------------- */}
       <section className="py-20 lg:py-24">
         <div className="shell">
           <SectionHeading
-            eyebrow="National Team"
-            title="National office bearers"
-            intro="Policy matters go to the President's office; membership and administration to the General Secretary."
+            eyebrow="Tamil Nadu State Board"
+            title="Office Bearers"
+            intro="Working promoters who hold the elected offices of the Board."
           />
 
-          <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {leaders.map((l, i) => (
-              <article key={l.name} className="card group overflow-hidden">
-                <div
-                  className={`relative flex h-40 items-center justify-center bg-gradient-to-br ${tints[i % tints.length]}`}
+          <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {stateOfficeBearers.map((o, i) => (
+              <article key={`${o.role}-${o.name}`} className="card group p-7 text-center">
+                <span
+                  className={`mx-auto grid h-16 w-16 place-items-center rounded-full bg-gradient-to-br font-display text-lg font-extrabold text-white transition-transform duration-500 group-hover:scale-110 ${
+                    tints[i % tints.length]
+                  }`}
                 >
-                  <span className="absolute inset-0 opacity-25 [background-image:radial-gradient(rgba(255,255,255,0.5)_1.2px,transparent_1.2px)] [background-size:12px_12px]" />
-                  <span className="relative grid h-20 w-20 place-items-center rounded-full border-2 border-white/50 font-display text-2xl font-extrabold text-white transition-transform duration-500 group-hover:scale-110">
-                    {initials(l.name)}
-                  </span>
-                </div>
+                  {initials(o.name)}
+                </span>
 
-                <div className="p-6">
-                  <p className="font-display text-[12.5px] font-semibold uppercase tracking-widest text-brand">
-                    {l.role}
-                  </p>
-                  <h3 className="mt-1.5 text-[17px]">{l.name}</h3>
-
-                  <ul className="mt-4 space-y-2.5 border-t border-hairline pt-4 text-[13.5px] text-slatey">
-                    <li className="flex items-center gap-2.5">
-                      <MapPin className="h-3.5 w-3.5 shrink-0 text-brand" />
-                      {l.city}
-                    </li>
-                    <li className="flex items-center gap-2.5">
-                      <Phone className="h-3.5 w-3.5 shrink-0 text-brand" />
-                      <a href={`tel:${l.phone.replace(/\s/g, "")}`} className="hover:text-brand">
-                        {l.phone}
-                      </a>
-                    </li>
-                    <li className="flex items-center gap-2.5">
-                      <Mail className="h-3.5 w-3.5 shrink-0 text-brand" />
-                      <a href={`mailto:${l.email}`} className="break-all hover:text-brand">
-                        {l.email}
-                      </a>
-                    </li>
-                  </ul>
-                </div>
+                <p className="mt-5 font-display text-[12.5px] font-semibold uppercase tracking-widest text-brand">
+                  {o.role}
+                </p>
+                <h3 className="mt-1.5 text-[18px]">{o.name}</h3>
+                <p className="mt-3 border-t border-hairline pt-3 text-[14px] leading-relaxed text-slatey">
+                  {o.note}
+                </p>
               </article>
             ))}
           </div>
         </div>
       </section>
 
-      {/* State */}
+      {/* --------------------------- Committee members --------------------------- */}
       <section className="bg-mist py-20 lg:py-24">
         <div className="shell">
           <SectionHeading
-            eyebrow="Tamil Nadu State Board"
-            title="State office bearers"
-            intro="Elected annually by members in Tamil Nadu. Positions marked as pending are confirmed at the state AGM."
+            eyebrow={`${committeeMembers.length} Members`}
+            title="Committee Members"
+            intro="Senior executives drawn from member companies, who study legislative and other matters of concern to industry and guide the work of the Board."
           />
 
-          <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {stateOfficeBearers.map((o, i) => {
-              const pending = o.name.toLowerCase().startsWith("to be");
-              return (
-                <article key={o.role} className="card p-7 text-center">
-                  <span
-                    className={`mx-auto grid h-16 w-16 place-items-center rounded-full font-display text-lg font-extrabold text-white ${
-                      pending ? "bg-hairline text-slatey" : `bg-gradient-to-br ${tints[i % tints.length]}`
-                    }`}
-                  >
-                    {initials(o.name)}
-                  </span>
-                  <p className="mt-4 font-display text-[12.5px] font-semibold uppercase tracking-widest text-brand">
-                    {o.role}
-                  </p>
-                  <h3 className={`mt-1.5 text-[17px] ${pending ? "text-slatey" : ""}`}>
-                    {o.name}
-                  </h3>
-                  <p className="mt-1 text-[13.5px] text-slatey">{o.city}</p>
-                  {!pending && (
-                    <a
-                      href={`mailto:${o.email}`}
-                      className="mt-4 inline-flex items-center gap-1.5 text-[13.5px] text-slatey hover:text-brand"
-                    >
-                      <Mail className="h-3.5 w-3.5 text-brand" />
-                      Email
-                    </a>
-                  )}
-                </article>
-              );
-            })}
+          <ol className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+            {committeeMembers.map((name, i) => (
+              <li
+                key={name}
+                className="flex items-center gap-3.5 rounded-lg border border-hairline border-l-2 border-l-brand bg-white px-5 py-4 transition-all hover:-translate-y-0.5 hover:shadow-[0_14px_30px_-18px_rgba(15,27,61,0.5)]"
+              >
+                <span className="font-display text-[13px] font-bold tabular-nums text-brand">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                <span className="font-display text-[14.5px] font-medium leading-snug text-navy">
+                  {name}
+                </span>
+              </li>
+            ))}
+          </ol>
+
+          <div className="mt-14 rounded-xl border border-hairline bg-white p-8 text-center sm:p-10">
+            <h3 className="text-2xl">Want a say in what the Board takes up?</h3>
+            <p className="mx-auto mt-3 max-w-xl text-[15px] leading-relaxed text-slatey">
+              Committee seats are filled from the membership. Joining the Tamil Nadu State
+              Board is the first step.
+            </p>
+            <div className="mt-7 flex flex-wrap justify-center gap-4">
+              <Link href="/membership/apply" className="btn btn-primary">
+                Become a Member
+                <ArrowRight className="h-4 w-4" />
+              </Link>
+              <Link href="/contact" className="btn btn-outline">
+                Contact the Board
+              </Link>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* National Governing Council */}
-      <section className="py-20 lg:py-24">
-        <div className="shell">
-          <SectionHeading
-            eyebrow="Governing Council"
-            title="National GC Members"
-            intro={gcMembers.intro}
-          />
-
-          <div className="mt-14 overflow-x-auto rounded-xl border border-hairline">
-            <table className="w-full min-w-[760px] border-collapse text-left">
-              <thead>
-                <tr className="bg-navy text-white">
-                  <th className="px-4 py-3 font-display text-[13px] font-semibold">No</th>
-                  <th className="px-4 py-3 font-display text-[13px] font-semibold">Name</th>
-                  <th className="px-4 py-3 font-display text-[13px] font-semibold">
-                    Designation
-                  </th>
-                  <th className="px-4 py-3 font-display text-[13px] font-semibold">
-                    Mobile
-                  </th>
-                  <th className="px-4 py-3 font-display text-[13px] font-semibold">
-                    Email ID
-                  </th>
-                </tr>
-              </thead>
-              <tbody>
-                {gcMembers.members.map((m, i) => (
-                  <tr
-                    key={`${m.name}-${m.mobile}`}
-                    className="border-t border-hairline transition-colors hover:bg-mist"
-                  >
-                    <td className="px-4 py-3 text-[13.5px] text-slatey">{i + 1}</td>
-                    <td className="px-4 py-3 text-[14px] font-medium text-navy">
-                      {m.name}
-                    </td>
-                    <td className="px-4 py-3 text-[13.5px] text-slatey">
-                      {m.designation}
-                    </td>
-                    <td className="px-4 py-3 text-[13.5px] text-slatey">
-                      <a href={`tel:+91${m.mobile}`} className="hover:text-brand">
-                        {m.mobile}
-                      </a>
-                    </td>
-                    <td className="px-4 py-3 text-[13.5px]">
-                      <a
-                        href={`mailto:${m.email}`}
-                        className="break-all text-brand hover:underline"
-                      >
-                        {m.email}
-                      </a>
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </section>
+      <Newsletter />
     </>
   );
 }

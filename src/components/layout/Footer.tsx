@@ -21,8 +21,7 @@ const socialLinks = [
 const quickLinks = [
   { label: "Home", href: "/" },
   { label: "About AIMO", href: "/about" },
-  { label: "State Boards", href: "/state-boards" },
-  { label: "Committee Members", href: "/about/office-bearers" },
+  { label: "Members", href: "/about/office-bearers" },
   { label: "Membership", href: "/membership" },
   { label: "Become a Member", href: "/membership/apply" },
 ];
@@ -32,7 +31,6 @@ const otherLinks = [
   { label: "Past Events", href: "/events/past" },
   { label: "Photo Gallery", href: "/gallery" },
   { label: "AIMO Awards", href: "/awards" },
-  { label: "Press Release", href: "/press" },
   { label: "Book Hall & Board Room", href: "/resources/book-hall" },
   { label: "Contact", href: "/contact" },
 ];
@@ -54,7 +52,7 @@ export default function Footer() {
               />
             </span>
             <span className="font-display text-lg font-bold leading-tight text-white">
-              AIMO
+              AIMO TNSB
               <span className="block text-[11px] font-medium tracking-widest text-brand">
                 SINCE 1941
               </span>
@@ -114,6 +112,7 @@ export default function Footer() {
             <li className="flex gap-3">
               <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-brand" />
               <span>
+                <span className="block text-white">{contact.org}</span>
                 {contact.addressLines.map((l) => (
                   <span key={l} className="block">
                     {l}

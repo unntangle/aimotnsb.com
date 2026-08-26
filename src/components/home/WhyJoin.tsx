@@ -13,7 +13,7 @@ export default function WhyJoin() {
           <div className="relative aspect-[4/5] overflow-hidden rounded-xl shadow-[0_30px_60px_-30px_rgba(15,27,61,0.5)] sm:aspect-[4/3] lg:aspect-[4/5]">
             <Img
               src={img.networking}
-              alt="AIMO members networking at a chapter meeting"
+              alt="AIMO TNSB members networking at a chapter meeting"
               sizes="(max-width: 1024px) 100vw, 50vw"
               seed="whyjoin"
               className="object-cover"
@@ -33,7 +33,7 @@ export default function WhyJoin() {
 
         {/* Copy */}
         <div>
-          <p className="eyebrow mb-3">Why Join AIMO</p>
+          <p className="eyebrow mb-3">Why Join AIMO TNSB</p>
           <h2 className="text-3xl sm:text-4xl">
             A smaller organisation gets a louder voice by standing with others
           </h2>
@@ -44,16 +44,16 @@ export default function WhyJoin() {
           </p>
 
           <p className="mt-5 text-[15.5px] leading-relaxed text-slatey">
-            Traditionally AIMO members have come from small, medium and large scale
+            Traditionally AIMO TNSB members have come from small, medium and large scale
             industries across the country: engineering, chemicals, pharmaceuticals, food
             processing and services. More recently we have seen a marked surge of interest
-            from start-ups and new-age entrepreneurs, who find in AIMO a credible support
-            and a genuine voice for their concerns at the policy level.
+            from start-ups and new-age entrepreneurs, who find in AIMO TNSB a credible
+            support and a genuine voice for their concerns at the policy level.
           </p>
 
           <p className="mt-4 text-[15.5px] leading-relaxed text-slatey">
-            AIMO works through cross-promotion and partnership. We are glad to work with
-            organisations that share our values to jointly build programmes of real
+            AIMO TNSB works through cross-promotion and partnership. We are glad to work
+            with organisations that share our values to jointly build programmes of real
             benefit to the business fraternity.
           </p>
 
@@ -63,7 +63,7 @@ export default function WhyJoin() {
               <ArrowRight className="h-4 w-4" />
             </Link>
             <Link href="/contact" className="btn btn-outline">
-              Partner with AIMO
+              Partner with AIMO TNSB
             </Link>
           </div>
         </div>

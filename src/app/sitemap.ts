@@ -15,8 +15,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/awards",
     "/resources/book-hall",
     "/resources/magazine",
-    "/resources/internship",
-    "/press",
+    "/resources/internship-testimonials",
     "/state-boards",
     "/contact",
   ];

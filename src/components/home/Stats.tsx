@@ -23,8 +23,8 @@ export default function Stats() {
           </h2>
           <p className="mt-5 text-[15.5px] leading-relaxed text-white/70">
             Micro, small and medium enterprises are the substrate beneath almost every
-            supply chain in the country. These are the numbers AIMO carries into every
-            consultation.
+            supply chain in the country. These are the numbers AIMO TNSB carries into
+            every consultation.
           </p>
         </div>
 

@@ -28,8 +28,11 @@ export const metadata: Metadata = {
   },
   description: site.description,
   keywords: [
+    "AIMO TNSB",
+    "AIMO Tamil Nadu State Board",
     "AIMO",
     "All India Manufacturers Organisation",
+    "MSME Tamil Nadu",
     "MSME India",
     "Indian manufacturing association",
     "industry body India",

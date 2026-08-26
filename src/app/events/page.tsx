@@ -10,7 +10,7 @@ import { img, sponsorTiers } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Events",
   description:
-    "AIMO's calendar of conclaves, credit clinics, export workshops, factory visits and award nights, held across India's states.",
+    "AIMO TNSB's calendar of conclaves, credit clinics, export workshops, factory visits and award nights, held across India's states.",
 };
 
 export default function EventsPage() {

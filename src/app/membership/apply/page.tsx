@@ -8,7 +8,7 @@ import { contact, img } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Become a Member",
   description:
-    "Become a member of the All India Manufacturers' Organisation. Fill in the membership form and the printed application downloads as soon as you submit.",
+    "Become a member of AIMO TNSB, the Tamil Nadu State Board of the All India Manufacturers' Organisation. Fill in the membership form and the printed application downloads as soon as you submit.",
 };
 
 export default function ApplyPage() {

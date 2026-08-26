@@ -16,7 +16,7 @@ export default function Newsletter() {
         <div className="max-w-lg text-center lg:text-left">
           <p className="eyebrow mb-2">Get the latest updates</p>
           <h2 className="text-2xl text-white sm:text-3xl">
-            The AIMO policy digest, once a month
+            The AIMO TNSB policy digest, once a month
           </h2>
           <p className="mt-3 text-[14.5px] text-white/60">
             Submissions filed, schemes worth reading, and what changed for MSMEs. No

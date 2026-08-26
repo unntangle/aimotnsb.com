@@ -14,9 +14,10 @@ export default function Intro() {
           </h2>
 
           <p className="mt-6 text-[15.5px] leading-relaxed text-slatey">
-            The purpose of AIMO is to encourage dialogue and partnership among the many
-            stakeholders of the MSME ecosystem, promoting innovation and knowledge sharing
-            on the issues that decide whether a small enterprise survives its next quarter.
+            The purpose of AIMO TNSB is to encourage dialogue and partnership among the
+            many stakeholders of the MSME ecosystem, promoting innovation and knowledge
+            sharing on the issues that decide whether a small enterprise survives its next
+            quarter.
           </p>
 
           <p className="mt-4 text-[15.5px] leading-relaxed text-slatey">
@@ -50,7 +51,7 @@ export default function Intro() {
           </div>
 
           <Link href="/about" className="btn btn-primary mt-9">
-            More about AIMO
+            More about AIMO TNSB
             <ArrowRight className="h-4 w-4" />
           </Link>
         </div>
@@ -59,7 +60,7 @@ export default function Intro() {
           <div className="relative aspect-[5/6] overflow-hidden rounded-2xl shadow-[0_30px_70px_-32px_rgba(15,27,61,0.6)]">
             <Img
               src={img.aimoEvent1}
-              alt="AIMO members and office bearers at a national conference"
+              alt="AIMO TNSB members and office bearers at a national conference"
               sizes="(max-width: 1024px) 100vw, 45vw"
               seed="intro"
               className="object-cover"

@@ -28,7 +28,7 @@ export default function BecomeMemberCTA({
       <div className="shell flex flex-col items-center gap-6 text-center md:flex-row md:justify-between md:text-left">
         <div className="max-w-2xl">
           <h2 className="text-2xl sm:text-[1.75rem]">
-            Become a Member now and reap the benefits of AIMO
+            Become a Member now and reap the benefits of AIMO TNSB
           </h2>
           <p className="mt-2.5 text-[15px] leading-relaxed text-slatey">{blurb}</p>
         </div>

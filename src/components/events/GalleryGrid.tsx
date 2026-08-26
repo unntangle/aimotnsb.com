@@ -132,11 +132,11 @@ export default function GalleryGrid({ photos }: { photos: Photo[] }) {
               sizes="(max-width: 1024px) 100vw, 1000px"
               className="mx-auto h-auto max-h-[78vh] w-auto max-w-full rounded-lg"
             />
-            {active.caption && (
+            {(active.caption || many) && (
               <figcaption className="mt-4 text-center text-[14.5px] text-white/75">
                 {active.caption}
                 {many && (
-                  <span className="ml-2 text-white/45">
+                  <span className={active.caption ? "ml-2 text-white/45" : "text-white/45"}>
                     {(open ?? 0) + 1} / {photos.length}
                   </span>
                 )}

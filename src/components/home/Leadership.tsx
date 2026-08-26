@@ -2,8 +2,8 @@
 
 import Link from "next/link";
 import { useRef } from "react";
-import { ChevronLeft, ChevronRight, Linkedin, Mail, Phone, Twitter } from "lucide-react";
-import { leaders } from "@/lib/site";
+import { ChevronLeft, ChevronRight } from "lucide-react";
+import { stateOfficeBearers } from "@/lib/site";
 
 const tints = [
   "from-brand to-brand-dark",
@@ -14,7 +14,7 @@ const tints = [
 
 function initials(name: string) {
   return name
-    .replace(/^Shri\s+/i, "")
+    .replace(/^(Shri|Smt\.?|Mr\.?|Mrs\.?|Ms\.?|Dr\.?)\s+/i, "")
     .split(" ")
     .filter(Boolean)
     .slice(0, 2)
@@ -39,7 +39,7 @@ export default function Leadership() {
       {/* Heading */}
       <div className="shell text-center">
         <p className="font-display text-[15px] font-medium text-brand">
-          National Leadership Team
+          Office Bearers
         </p>
         <h2 className="mt-3 text-3xl sm:text-4xl lg:text-[2.75rem]">
           The people who carry the mandate
@@ -68,7 +68,7 @@ export default function Leadership() {
           ref={track}
           className="flex snap-x snap-mandatory items-start justify-start gap-6 overflow-x-auto px-16 pb-8 pt-10 [scrollbar-width:none] lg:justify-center [&::-webkit-scrollbar]:hidden"
         >
-          {leaders.map((l, i) => (
+          {stateOfficeBearers.map((l, i) => (
             <article
               key={l.name}
               data-card
@@ -84,48 +84,17 @@ export default function Leadership() {
                 <span className="relative grid h-20 w-20 place-items-center rounded-full border-2 border-white/50 font-display text-2xl font-extrabold text-white">
                   {initials(l.name)}
                 </span>
-
-                {/* Social row, revealed on hover */}
-                <div className="card-socials absolute inset-x-0 bottom-5 flex justify-center gap-2.5">
-                  <a
-                    href={`mailto:${l.email}`}
-                    aria-label={`Email ${l.name}`}
-                    className="social-icon grid h-10 w-10 place-items-center rounded-full bg-white text-brand shadow-md transition-colors hover:bg-brand hover:text-white"
-                  >
-                    <Mail className="h-4 w-4" />
-                  </a>
-                  <a
-                    href={`tel:${l.phone.replace(/\s/g, "")}`}
-                    aria-label={`Call ${l.name}`}
-                    className="social-icon grid h-10 w-10 place-items-center rounded-full bg-white text-brand shadow-md transition-colors hover:bg-brand hover:text-white"
-                  >
-                    <Phone className="h-4 w-4" />
-                  </a>
-                  <a
-                    href="https://linkedin.com"
-                    target="_blank"
-                    rel="noreferrer"
-                    aria-label={`${l.name} on LinkedIn`}
-                    className="social-icon grid h-10 w-10 place-items-center rounded-full bg-white text-brand shadow-md transition-colors hover:bg-brand hover:text-white"
-                  >
-                    <Linkedin className="h-4 w-4" />
-                  </a>
-                  <a
-                    href="https://x.com"
-                    target="_blank"
-                    rel="noreferrer"
-                    aria-label={`${l.name} on X`}
-                    className="social-icon grid h-10 w-10 place-items-center rounded-full bg-white text-brand shadow-md transition-colors hover:bg-brand hover:text-white"
-                  >
-                    <Twitter className="h-4 w-4" />
-                  </a>
-                </div>
               </div>
 
               {/* Caption */}
               <div className="px-6 py-6">
                 <h3 className="min-h-[3.4rem] text-[19px] leading-snug">{l.name}</h3>
-                <p className="mt-1.5 text-[14.5px] text-slatey">{l.role}</p>
+                <p className="mt-1.5 font-display text-[14.5px] font-medium text-brand">
+                  {l.role}
+                </p>
+                <p className="mt-2 text-[13.5px] leading-relaxed text-slatey">
+                  {l.note}
+                </p>
               </div>
             </article>
           ))}

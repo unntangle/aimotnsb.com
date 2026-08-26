@@ -47,7 +47,7 @@ export default function Header() {
       <div className="bg-white">
         <div className="shell flex items-center justify-between gap-3 py-2.5 sm:gap-6">
           {/* AIMO emblem — top-left anchor */}
-          <Link href="/" aria-label="AIMO — home" className="flex shrink-0 items-center">
+          <Link href="/" aria-label="AIMO TNSB — home" className="flex shrink-0 items-center">
             <Image
               src="/assets/aimo-logo-left.png"
               alt="AIMO emblem"
@@ -61,7 +61,7 @@ export default function Header() {
           {/* Centred wordmark */}
           <Link
             href="/"
-            aria-label="All India Manufacturers' Organisation — home"
+            aria-label="All India Manufacturers' Organisation (TNSB) — home"
             className="flex min-w-0 flex-1 items-center justify-center"
           >
             <Image
@@ -100,7 +100,7 @@ export default function Header() {
           {/* Compact emblem — appears only once the masthead has scrolled away */}
           <Link
             href="/"
-            aria-label="AIMO — home"
+            aria-label="AIMO TNSB — home"
             className={`shrink-0 items-center transition-opacity duration-200 ${
               stuck ? "flex opacity-100" : "hidden opacity-0"
             }`}

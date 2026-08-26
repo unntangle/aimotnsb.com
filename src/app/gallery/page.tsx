@@ -1,16 +1,19 @@
 import type { Metadata } from "next";
 import PageHero from "@/components/layout/PageHero";
 import GalleryGrid from "@/components/events/GalleryGrid";
+import SectionNav from "@/components/ui/SectionNav";
 import BecomeMemberCTA from "@/components/ui/BecomeMemberCTA";
-import { galleryAlbums, img } from "@/lib/site";
+import { galleryEvents, img } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Gallery",
   description:
-    "Glimpses of AIMO events: photographs from conferences, celebrations and chapter gatherings across India.",
+    "Glimpses of AIMO events: photographs from TECHKNOW 2022 at Anna University, conferences, celebrations and chapter gatherings.",
 };
 
 export default function GalleryPage() {
+  const sections = galleryEvents.map((e) => ({ id: e.id, label: e.title }));
+
   return (
     <>
       <PageHero
@@ -21,31 +24,39 @@ export default function GalleryPage() {
         crumb="Gallery"
       />
 
-      {galleryAlbums.map((album, i) => (
-        <section
-          key={album.title}
-          className={`py-16 lg:py-20 ${i % 2 ? "bg-mist" : ""}`}
-        >
-          <div className="shell">
-            <h2 className="text-3xl sm:text-4xl">{album.title}</h2>
-            <span className="mt-5 block h-[3px] w-14 rounded-full bg-brand" />
-            {album.meta && (
-              <p className="mt-5 font-display text-[14px] font-semibold text-brand">
-                {album.meta}
-              </p>
-            )}
-            {album.blurb && (
-              <p className="mt-2 max-w-3xl text-[15.5px] leading-relaxed text-slatey">
-                {album.blurb}
-              </p>
-            )}
+      <div className="shell grid gap-8 py-12 lg:grid-cols-[248px_1fr] lg:gap-14 lg:py-16">
+        <SectionNav sections={sections} ariaLabel="Gallery events" />
 
-            <div className="mt-10">
-              <GalleryGrid photos={album.photos} />
-            </div>
-          </div>
-        </section>
-      ))}
+        <div className="min-w-0 space-y-20 lg:space-y-28">
+          {galleryEvents.map((event) => (
+            <section key={event.id} id={event.id} className="scroll-mt-32">
+              <h2 className="text-3xl sm:text-[2.15rem]">{event.title}</h2>
+              <span className="mt-5 block h-[3px] w-14 rounded-full bg-brand" />
+              {event.meta && (
+                <p className="mt-5 font-display text-[14px] font-semibold text-brand">
+                  {event.meta}
+                </p>
+              )}
+              {event.blurb && (
+                <p className="mt-2 max-w-3xl text-[15.5px] leading-relaxed text-slatey">
+                  {event.blurb}
+                </p>
+              )}
+
+              {event.albums.map((album) => (
+                <div key={album.title || event.id} className="mt-12 first:mt-10">
+                  {album.title && (
+                    <h3 className="mb-6 font-display text-[13px] font-bold uppercase tracking-widest text-navy">
+                      {album.title}
+                    </h3>
+                  )}
+                  <GalleryGrid photos={album.photos} />
+                </div>
+              ))}
+            </section>
+          ))}
+        </div>
+      </div>
 
       <BecomeMemberCTA blurb="Join the manufacturers who meet at gatherings like these: policy representation, credit clinics, research access and industry recognition, since 1941." />
     </>

@@ -46,30 +46,47 @@ export const img = {
   aimoEvent2: "/assets/gal2.jpeg",
   aimoEvent3: "/assets/gal3.jpeg",
   aimoEvent4: "/assets/gal4.jpeg",
+
+  /* ---- Home page hero banners ----
+     Swapping a slide's photo is a one-line change: edit the file the
+     key points to here, or point a slide at a different key below. */
+  hero1: "/assets/hero/hero1.jpg",
+  hero2: "/assets/hero/hero2.jpg",
+  hero3: "/assets/hero/hero3.jpg",
+  hero4: "/assets/hero/hero4.jpg",
+  hero5: "/assets/hero/hero5.jpg",
+  hero6: "/assets/hero/hero6.jpg",
+  hero7: "/assets/hero/hero7.jpg",
 };
 
 export const site = {
-  name: "All India Manufacturers' Organisation",
-  short: "AIMO",
+  name: "All India Manufacturers' Organisation (TNSB)",
+  short: "AIMO TNSB",
   tagline: "Prosperity through Industry",
   founded: 1941,
   founder: "Bharat Ratna Sir M. Visvesvaraya",
   description:
-    "AIMO is the leading voice of Indian industry, a national body of Micro, Small and Medium Enterprises founded by Bharat Ratna Sir M. Visvesvaraya in 1941.",
-  url: "https://www.aimoindia.com",
+    "AIMO TNSB is the Tamil Nadu State Board of the All India Manufacturers' Organisation, a national body of Micro, Small and Medium Enterprises founded by Bharat Ratna Sir M. Visvesvaraya in 1941.",
+  url: "https://www.aimotnsb.com",
 };
 
 export const contact = {
+  attn: "The Executive Director",
+  org: "All India Manufacturers' Organisation (Tamil Nadu State Board)",
   addressLines: [
-    "Jeevan Sahakar, 4th Floor",
-    "Sir P M Road, Fort",
-    "Mumbai – 400 001",
+    "Round Table House, 2nd Floor",
+    "80/69, Nungambakkam High Road",
+    "Chennai – 600 034",
   ],
-  address: "Jeevan Sahakar, 4th Floor, Sir P M Road, Fort, Mumbai – 400 001",
-  phones: ["+91 22 2261 5858", "+91 22 2261 5959"],
-  emails: ["gs@aimoindia.com", "aimoindia@aimoindia.com"],
+  address:
+    "Round Table House, 2nd Floor, 80/69 Nungambakkam High Road, Chennai – 600 034",
+  phones: ["+91 44 2822 8282", "+91 44 2822 8383"],
+  /** Second number above is the TeleFax line. */
+  phoneLabels: ["Tel", "TeleFax"],
+  emails: ["aimo@aimotnsb.com"],
   hours: "Monday – Saturday · 10:00 AM – 6:00 PM IST",
-  mapQuery: "Jeevan Sahakar Building, Sir P M Road, Fort, Mumbai 400001",
+  mapQuery:
+    "All India Manufacturers Organisation, Round Table House, 69 Nungambakkam High Road, Chennai 600034",
 };
 
 export const socials = [
@@ -91,9 +108,8 @@ export const nav: NavItem[] = [
     label: "Know AIMO",
     href: "/about",
     children: [
-      { label: "About AIMO", href: "/about" },
-      { label: "State Boards", href: "/state-boards" },
-      { label: "Committee Members", href: "/about/office-bearers" },
+      { label: "Know AIMO TNSB", href: "/about" },
+      { label: "Members", href: "/about/office-bearers" },
     ],
   },
   { label: "Membership", href: "/membership" },
@@ -109,10 +125,13 @@ export const nav: NavItem[] = [
   },
   {
     label: "Resources",
-    href: "/press",
+    href: "/resources/book-hall",
     children: [
-      { label: "Press Release", href: "/press" },
       { label: "Book Hall & Board Room", href: "/resources/book-hall" },
+      {
+        label: "Internship Testimonials",
+        href: "/resources/internship-testimonials",
+      },
     ],
   },
   { label: "Contact", href: "/contact" },
@@ -123,29 +142,65 @@ export const nav: NavItem[] = [
 export const heroSlides = [
   {
     eyebrow: "Upcoming · 25–26 September 2026",
-    title: "AIMO KAVERI-TECHKNOW 2026",
-    body: "Two days on the questions that will decide the next decade of Indian manufacturing: export competitiveness, credit beyond collateral, energy costs and the skills pipeline. Ministers, bankers, buyers and 900 promoters at the Nehru Centre, Mumbai.",
-    image: img.aimoEvent4,
+    title: "AIMO TNSB TECHKNOW 2026",
+    body: "Two days on the questions that will decide the next decade of Indian manufacturing: export competitiveness, credit beyond collateral, energy costs and the skills pipeline. Ministers, bankers, buyers and 900 promoters at the Vivekananda Auditorium, Anna University, Chennai.",
+    image: img.hero1,
     cta: { label: "View Event Details", href: "/events" },
-    alt: "Delegates at AIMO KAVERI-TECHKNOW 2026",
+    alt: "Delegates at an AIMO national convention",
   },
   {
     eyebrow: "Why Become an AIMO Member?",
     title: "A Smaller Enterprise Gets a Louder Voice",
     body: "One promoter with a grievance is noise. Two hundred units with the same objection and the numbers to back it is a sector position, and that is what changes a rule. Policy representation, credit clinics, research and recognition, since 1941.",
-    image: img.networking,
-    cta: { label: "Why Join AIMO", href: "/membership" },
+    image: img.hero2,
+    cta: { label: "Why Join AIMO TNSB", href: "/membership" },
     cta2: { label: "Become a Member", href: "/membership/apply" },
-    alt: "AIMO members networking at a chapter meeting",
+    alt: "AIMO TNSB members networking at a chapter meeting",
   },
   {
     eyebrow: "Book Hall & Board Room",
-    title: "Your Next Meeting, at the AIMO Premises",
+    title: "Your Next Meeting, at the AIMO TNSB Premises",
     body: "Suitable to host seminars, workshops, meetings, mini-conferences and training programmes.",
-    image: img.aimoHall,
+    image: img.hero3,
     cta: { label: "Check Availability", href: "/resources/book-hall" },
     cta2: { label: "See the Spaces", href: "/resources/book-hall#spaces" },
-    alt: "The AIMO conference hall set up for a session",
+    alt: "The AIMO TNSB conference hall set up for a session",
+  },
+  {
+    eyebrow: "Founded 1941 · Bharat Ratna Sir M. Visvesvaraya",
+    title: "Eight Decades of Prosperity through Industry",
+    body: "AIMO was founded by the engineer who built the Krishna Raja Sagara dam and served as Diwan of Mysore. The conviction he started with, that industry is how a country lifts itself, is still the one the organisation works to.",
+    image: img.hero4,
+    cta: { label: "Know AIMO", href: "/about" },
+    cta2: { label: "Our Founder", href: "/about#our-founder" },
+    alt: "Portrait setting recalling AIMO's founding in 1941",
+  },
+  {
+    eyebrow: "Government Relations",
+    title: "A Seat at Over 150 Policy Tables",
+    body: "Recognised by the Government of India as an apex industry body, AIMO holds representation on more than 150 National and State level government and quasi-government bodies, from excise advisory committees to labour and consumer protection councils.",
+    image: img.hero5,
+    cta: { label: "How We Represent You", href: "/about" },
+    cta2: { label: "Read Our Submissions", href: "/press" },
+    alt: "AIMO office bearers at a policy consultation",
+  },
+  {
+    eyebrow: "Sir Visvesvaraya Industrial Award",
+    title: "Recognition That Industry Actually Respects",
+    body: "Presented each year to an enterprise for outstanding performance, and handed over by Governors of Tamil Nadu and Union Ministers. Past recipients include the TVS Group, Ashok Leyland, MRF, BHEL, Hyundai Motors India and Indian Overseas Bank.",
+    image: img.hero6,
+    cta: { label: "View the Awards", href: "/awards" },
+    cta2: { label: "Photo Gallery", href: "/gallery" },
+    alt: "Presentation of the Sir Visvesvaraya Industrial Award",
+  },
+  {
+    eyebrow: "Tamil Nadu State Board",
+    title: "Close to the Shop Floor, Across the State",
+    body: "From Ambattur and Hosur to Coimbatore, Tiruppur, Salem, Madurai and Trichy. Monthly members' meets, scheme clinics with TIIC, SIDBI and the banks, and liaison with the District Industries Centres.",
+    image: img.hero7,
+    cta: { label: "Tamil Nadu State Board", href: "/about/tamil-nadu-state-board" },
+    cta2: { label: "Meet the Members", href: "/about/office-bearers" },
+    alt: "Manufacturing cluster in Tamil Nadu",
   },
 ];
 
@@ -163,8 +218,8 @@ export const pillars = [
     icon: "chart",
     title: "Evaluate",
     subtitle: "The Global Situation",
-    body: "Original research, member surveys and trade data, so that when AIMO speaks to government, it speaks with evidence rather than anecdote.",
-    href: "/press",
+    body: "Original research, member surveys and trade data, so that when AIMO TNSB speaks to government, it speaks with evidence rather than anecdote.",
+    href: "/about",
   },
   {
     icon: "sparkles",
@@ -275,18 +330,70 @@ export const aboutSections = [
   { id: "overview", label: "About AIMO" },
   { id: "our-founder", label: "Our Founder" },
   { id: "industry-representation", label: "Industry Representation" },
-  { id: "government-relations", label: "Government Relations" },
-  { id: "past-presidents", label: "Past Presidents" },
-  { id: "national-leadership", label: "National Leadership Team" },
-  { id: "gc-members", label: "National GC Members" },
-  { id: "past-national-team", label: "Immediate Past National Team" },
 ];
+
+/* ------------------------- About AIMO (TNSB) copy ----------------------- */
+
+/** Body copy for the About page overview, as published by the Tamil Nadu
+    State Board. The opening paragraph lives in the JSX because it carries
+    inline emphasis; everything below is plain text and belongs here. */
+export const aboutOverview = {
+  bodiesLead:
+    "The Tamil Nadu State Board continues to be represented on a number of Government and Quasi Government bodies, viz.",
+  structure: {
+    title: "Structure",
+    body: "Members of AIMO are drawn from Small, Medium and Large scale industries from all over the country with diverse interests such as engineering, chemicals, pharmaceuticals, food processing and services. With headquarters in Mumbai, AIMO has State and Regional level boards elected annually, supported by Secretariats at headquarters and at the State Boards. The Tamil Nadu State Board operates from Chennai.",
+  },
+  operation: {
+    title: "Operation",
+    body: "Over 20 Councils and Committees, with experienced senior executives of member companies, study and analyse various legislative and other matters of concern to industry and provide expert guidance to the National Working Committee of AIMO. Periodic workshops and training programmes are organised to help members keep abreast of developments in industry. Particular stress is laid on the significant role of small industry in national development, and AIMO has been focusing attention on several areas to avoid sickness in industry.",
+  },
+  cooperation:
+    "AIMO has been instrumental in creating an environment for co-operation between Government and Industry, in promoting and co-ordinating industrial and economic growth, and has worked for servicing trade and industry and the community. In order to effectively represent industry, AIMO actively participates in over 150 National and State level Government and quasi Government bodies.",
+};
+
+/** The Tamil Nadu State Board's own record, as set out on the About page. */
+export const tnsbProfile = {
+  name: "Tamil Nadu State Board (TNSB)",
+  intro:
+    "TNSB has been in the forefront of the Organisation\u2019s growth. Apart from acting as industry-representative, TNSB has established a continuing interaction with major institutions such as Anna University.",
+  trust:
+    "Through its Industrial Research & Development Trust, TNSB has instituted a number of awards and endowments at the University. The Trust has extended financial assistance through interest-free loans to students undergoing engineering education.",
+  exhibition:
+    "The Trust pioneered the concept of the Ideal Home Exhibition as marketing support for manufacturers of domestic goods and services. This exhibition is now organised in different mofussil centres.",
+  incubation:
+    "More recently, AIMO TNSB has taken the initiative of starting a programme to incubate Rural Innovations, so that the enormous knowledge held in rural India can be incubated and converted into commercial reality.",
+  milestonesLead:
+    "The Tamil Nadu State Board and its I R & D Trust have had a significant role in major industrial expositions.",
+  milestones: [
+    {
+      year: "1991",
+      title: "INDEXPO \u201991",
+      body: "Held in June 1991 along with the Directorate of Industries and Commerce and the Tamil Small & Tiny Industries Association. A landmark in creating awareness of the industrial potential of the State.",
+    },
+    {
+      year: "1993",
+      title: "Entrepreneur Festival",
+      body: "Held in 1993 and again in 1994 to provide complete guidance to prospective entrepreneurs.",
+    },
+    {
+      year: "1994",
+      title: "TECH-200",
+      body: "AIMO (TNSB) had a major role in this industrial exposition, conducted in April 1994 to commemorate the bi-centenary of the College of Engineering, Guindy, Chennai.",
+    },
+    {
+      year: "2001",
+      title: "FOODTECH 2001",
+      body: "A food processing exhibition and seminar conducted in June 2001.",
+    },
+  ],
+};
 
 /* ------------------------ Industry representation ----------------------- */
 
 export const industryRepresentation = {
   intro:
-    "The Government of India has identified the following key sectors to develop products in India. We at AIMO understand the nuances and magnitude of scale in implementing the scheme. AIMO will actively work with the Central and State Governments to ensure the vision for Make in India is successful.",
+    "The Government of India has identified the following key sectors to develop products in India. We at AIMO TNSB understand the nuances and magnitude of scale in implementing the scheme. AIMO TNSB will actively work with the Central and State Governments to ensure the vision for Make in India is successful.",
   sectors: [
     "Automobile",
     "Automobile Components",
@@ -317,17 +424,16 @@ export const industryRepresentation = {
 
 export const governmentRelations = {
   intro:
-    "AIMO has been recognised by the Government of India as an apex organisation of Industry and given representation on most of the policy making bodies of the Central and State Governments. AIMO has been instrumental in creating an environment for co-operation between Government and Industry, in promoting and co-ordinating industrial and economic growth, and has worked for servicing trade and industry and the community. In order to effectively represent industry, AIMO actively participates in over 150 National and State level Government and quasi Government bodies.",
+    "AIMO has been instrumental in creating an environment for co-operation between Government and Industry, in promoting and co-ordinating industrial and economic growth, and has worked for servicing trade and industry and the community. In order to effectively represent industry, AIMO actively participates in over 150 National and State level Government and quasi Government bodies.",
   count: "150+",
+  /** Bodies on which the Tamil Nadu State Board is represented, as listed
+      on the AIMO (TNSB) About page. */
   bodies: [
     "Central Excise Regional Advisory Committee, Chennai II and III",
     "State Labour Advisory Committee",
     "Minimum Wages Advisory Committee",
     "Good Industrial Relations Advisory Committee",
     "Regional Workers Education Advisory Committee",
-    "SISI Advisory Committee",
-    "Regional Testing Centre Advisory Committee",
-    "State Consumer Protection Council",
     "Anna University Planning & Monitoring Board",
     "EPF Advisory Committee",
     "ESI Regional Council",
@@ -532,14 +638,20 @@ export const immediatePastTeam = [
 
 export const featuredEvent = {
   eyebrow: "Upcoming Event",
-  title: "AIMO KAVERI-TECHKNOW 2026",
+  title: "AIMO TNSB TECHKNOW 2026",
   date: "2026-09-25T09:30:00+05:30",
   dateLabel: "25–26 September 2026",
   dayBadge: { day: "25", month: "Sep" },
-  venue: "Nehru Centre, Worli, Mumbai",
-  /** Spaces are percent-encoded so the href resolves correctly. */
-  brochure: "/assets/KAVERI-TECHKNOW%202026-BROCHURE-DESIGN-SAMPLE-I.pdf",
-  body: "Two days on the themes that will decide the next decade of Indian manufacturing: export competitiveness after the new trade agreements, credit access beyond collateral, energy costs, and the skills pipeline. Ministers, bankers, buyers and 900 promoters in one room.",
+  venue: "Vivekananda Auditorium, Anna University, Chennai",
+  /** External registration form for the conference track. */
+  registerUrl:
+    "https://techknow2026.in/index.php?route=register/form&track=Conference",
+  /** Spaces and the ampersand are percent-encoded so the href resolves
+      correctly; `brochureFilename` is what the browser saves it as. */
+  brochure:
+    "/assets/TECHKNOW%20BROCHURE%20SEPTEMBER%2025th%20%26%2026th%202026.pdf",
+  brochureFilename: "AIMO-TNSB-TECHKNOW-2026-Brochure.pdf",
+  body: "Two days on the themes that will decide the next decade of Indian manufacturing: export competitiveness after the new trade agreements, credit access beyond collateral, energy costs, and the skills pipeline. Ministers, bankers, buyers and 900 promoters at Anna University, Chennai.",
   image: img.aimoEvent4,
   highlights: [
     "12 sector round-tables with policy-makers",
@@ -649,7 +761,7 @@ export const eventGallery = [
     image: img.networking,
   },
   {
-    title: "AIMO Excellence Awards Night",
+    title: "AIMO TNSB Excellence Awards Night",
     meta: "Mumbai · Nov 2025",
     image: img.awards,
   },
@@ -683,7 +795,7 @@ export const membershipTiers = [
       "Delegate passes to national conventions",
       "Sector round-table participation",
       "Buyer–supplier matchmaking access",
-      "Eligibility for AIMO Awards",
+      "Eligibility for AIMO TNSB Awards",
       "Named representation in submissions",
     ],
   },
@@ -703,7 +815,7 @@ export const membershipTiers = [
   },
 ];
 
-export const membershipLead = "Become a Member now and reap the benefits of AIMO.";
+export const membershipLead = "Become a Member now and reap the benefits of AIMO TNSB.";
 
 export const memberBenefits = [
   {
@@ -711,42 +823,42 @@ export const memberBenefits = [
     title: "Exposure to New Tech Trends",
     body: "We believe that the MSME sector needs to be exposed to new technologies and digital trends which will impact their business.",
     detail:
-      "The sector cannot afford to meet automation, AI and digital compliance for the first time when a customer demands it. AIMO brings the trends to you early.",
+      "The sector cannot afford to meet automation, AI and digital compliance for the first time when a customer demands it. AIMO TNSB brings the trends to you early.",
   },
   {
     icon: "landmark",
     title: "A Voice in Public Policy",
-    body: "With greater power comes greater responsibility. AIMO will make mature and serious representations and try to impact public policy in a manner that has a positive impact for the industry and our country.",
+    body: "With greater power comes greater responsibility. AIMO TNSB will make mature and serious representations and try to impact public policy in a manner that has a positive impact for the industry and our country.",
     detail:
       "Submissions go to ministries and regulators inside the consultation window, and we name the members whose experience shaped them.",
   },
   {
     icon: "book",
     title: "Knowledge and Learning",
-    body: "We believe that continuous improvement of professional skills ensures greater productivity and greater profits for the entrepreneur. AIMO will provide you numerous platforms for valuable exchange of ideas.",
+    body: "We believe that continuous improvement of professional skills ensures greater productivity and greater profits for the entrepreneur. AIMO TNSB will provide you numerous platforms for valuable exchange of ideas.",
     detail:
       "Workshops, clinics and sector briefings run right through the year, built around what members ask for rather than what is easy to programme.",
   },
   {
     icon: "users",
     title: "Building Business Networks",
-    body: "Through interactions with other AIMO members you will be able to build a strong network that fuels professional growth as well as explore new business possibilities.",
+    body: "Through interactions with other AIMO TNSB members you will be able to build a strong network that fuels professional growth as well as explore new business possibilities.",
     detail:
       "Thousands of promoters across every state. Some become mentors, some become customers, some become the partner you needed for a tender.",
   },
   {
     icon: "chart",
     title: "Access to New Research and Data",
-    body: "AIMO is committed to getting fresh data that is relevant to the members. We partner educational and management institutes to develop studies for specific sectors.",
+    body: "AIMO TNSB is committed to getting fresh data that is relevant to the members. We partner educational and management institutes to develop studies for specific sectors.",
     detail:
       "Sector studies members can actually use in a board meeting, rather than headline numbers with nothing behind them.",
   },
   {
     icon: "award",
     title: "Rewards and Recognition",
-    body: "We at AIMO reward our performing and active members with industry recognition as well as media exposure.",
+    body: "We at AIMO TNSB reward our performing and active members with industry recognition as well as media exposure.",
     detail:
-      "Through the AIMO Awards and our press platform, active members get visibility beyond their own customer list.",
+      "Through the AIMO TNSB Awards and our press platform, active members get visibility beyond their own customer list.",
   },
 ];
 
@@ -754,7 +866,7 @@ export const enrolSteps = [
   {
     step: "01",
     title: "Download the membership form",
-    body: "Fill in the online membership form and the printed AIMO application downloads automatically as soon as you submit it.",
+    body: "Fill in the online membership form and the printed AIMO TNSB application downloads automatically as soon as you submit it.",
   },
   {
     step: "02",
@@ -786,14 +898,20 @@ export const enrolSteps = [
 export const enrolConfirmation =
   "You will receive an online confirmation of receipt by email. Your membership will need to be approved by both the State Board and the National Governing Council, after which you will receive your membership number and membership docket.";
 
-/** Printed application form served from /public. */
-export const membershipFormPdf = "/AIMO-membership-form.pdf";
+/** Printed application form served from /public. The stored filename contains
+    spaces, so `href` is percent-encoded; `filename` is what the browser saves it
+    as. Replacing the form is a two-line change: drop the new file into
+    /public/assets and update both fields. */
+export const membershipFormFile = {
+  href: "/assets/Membership%20App.%20form.doc",
+  filename: "AIMO-TNSB-Membership-Application-Form.doc",
+};
 
 /* ------------------------------ State boards ---------------------------- */
 
 export const stateBoardsIntro = [
   "AIMO has created boards at State level to be closer to the industry in that region and to facilitate industry based on the regional or State environment.",
-  "Over 40 Councils on different subject matters, comprising experienced senior executives pooled from member companies, study and analyse various legislative and other matters of concern to industry, and provide expert guidance and advice to the National Working Committee of AIMO for taking up the matter with the different stake holders.",
+  "Over 20 Councils and Committees on different subject matters, comprising experienced senior executives pooled from member companies, study and analyse various legislative and other matters of concern to industry, and provide expert guidance and advice to the National Working Committee of AIMO for taking up the matter with the different stake holders.",
   "Periodic workshops and training programmes are organised to help members keep abreast of developments in industry. Plans are also afoot for starting skilling and finishing school programmes as per industry needs in academic institutions, to help the industry get skilled, employable manpower.",
 ];
 
@@ -876,9 +994,12 @@ export const pastEventPosters = [
 
 export const visvesvarayaAward = {
   title: "Sir Visvesvaraya Industrial Award",
+  /** Pulled-out opening statement. */
+  lead: "AIMO was founded by Bharat Ratna Sir M. Visvesvaraya over 75 years ago. The Organisation has established itself as a body committed to industrial progress with the motto \u201cProsperity through Industry\u201d, and over the past few decades it has been consistently supportive of several initiatives of the Government of India and the Government of Tamil Nadu aimed at accelerating industrial growth and quality education for all engineering colleges aspiring to improve the quality and brand name in the State.",
   intro: [
-    "It is significant to mention that India's first ever World Trade Centre, Mumbai, named after Dr. M. Visvesvaraya as the M. Visvesvaraya Industrial Research & Development Centre (MVIRDC in short), is the outcome of the initiative taken by AIMO.",
-    "Every year we identify an industry for its excellent performance and present it with the Sir Visvesvaraya Industrial Award. In the past we have given this award to organisations like:",
+    "It has been recognised by Government as an apex Organisation of industry and given representation on most of the policy making bodies of the Central and State Governments. The Headquarters of AIMO is based at Mumbai. We represent Tamil Nadu State.",
+    "It is significant to mention that India\u2019s first ever World Trade Centre, Mumbai, which is named after Dr. M. Visvesvaraya as the M. Visvesvaraya Industrial Research & Development Centre (MVIRDC in short), is the outcome of the initiative taken by AIMO.",
+    "Every year we identify an industry registered in Tamil Nadu or Pondicherry based on its excellence in performance, and offer the Sir Visvesvaraya Industrial Award to that industry.",
   ],
   recipients: [
     "TVS Group",
@@ -886,22 +1007,22 @@ export const visvesvarayaAward = {
     "Ashok Leyland Ltd.",
     "MRF Ltd.",
     "S I Viscose Ltd",
-    "Madras Refineries Ltd (Public Sector)",
-    "Sundaram Fasteners Ltd.",
-    "Bharat Heavy Electricals Ltd (Public Sector)",
-    "Lakshmi Machine Works Ltd.",
-    "Neyvelli Lignite Corpn. Ltd (Public Sector)",
+    "Madras Refineries Ltd \u2013 Public Sector",
+    "Sundaram Fasteners Ltd",
+    "Bharat Heavy Electricals Ltd \u2013 Public Sector",
+    "Lakshmi Machine Works Ltd",
+    "Neyvelli Lignite Corpn. Ltd \u2013 Public Sector",
     "Tamil Nadu Petroproducts Ltd.",
-    "Hindustan Teleprinters Ltd (Public Sector)",
-    "Chemfab Alkalies Ltd.",
-    "Madras Cements Ltd.",
+    "Hindustan Teleprinters Ltd \u2013 Public Sector",
+    "Chemfab Alkalies Ltd",
+    "Madras Cements Ltd",
     "India Pistons Ltd.",
     "Orchid Chemicals and Pharmaceuticals Ltd.",
     "Shasun Chemicals and Drugs Ltd.",
     "MAARS India Ltd.",
     "Sri Krishna Sweets Pvt. Ltd.",
     "E.I.D. Parry (India) Ltd.",
-    "Bannari Amman Sugars Ltd.",
+    "Bannari Amman Sugars Ltd",
     "Indian Bank",
     "M.M. Exports",
     "City Union Bank (Banking)",
@@ -912,53 +1033,58 @@ export const visvesvarayaAward = {
     "LifeCell International Pvt. Ltd.",
     "Indian Overseas Bank",
   ],
-  presentersLead:
-    "This award is given at a function in the presence of renowned personalities. In the past we have had the pleasure of having:",
-  presenters: [
+  /** Award presentation ceremonies, oldest first. */
+  ceremonies: [
     {
-      name: "His Excellency Shri P. S. Ramamohan Rao",
-      role: "Governor of Tamil Nadu",
-      body: "to deliver this award to Sri Krishna Sweets in 2002.",
+      year: "1989",
+      recipients: "Sundaram Fasteners",
+      presenter:
+        "Presented by His Excellency Dr. Bhishma Narain Singh, Governor of Tamil Nadu",
     },
     {
-      name: "His Excellency Dr. P. C. Alexander",
-      role: "Governor of Tamil Nadu",
-      body: "to deliver this award to MRF Ltd. in 1997.",
+      year: "1991",
+      recipients: "Tamilnadu Petro Products & Hindustan Teleprinters Ltd.",
+      presenter:
+        "Presented by His Excellency Dr. Chenna Reddy, Governor of Tamil Nadu",
     },
     {
-      name: "His Excellency Dr. Bhishma Narain Singh",
-      role: "Governor of Tamil Nadu",
-      body: "to deliver this award to Sundaram Fasteners in 1989.",
+      year: "1992",
+      recipients: "Chemplast",
+      presenter:
+        "Presented by Shri P. A. Sangma, Honourable Minister for Labour, Government of India",
     },
     {
-      name: "His Excellency Dr. Chenna Reddy",
-      role: "Governor of Tamil Nadu",
-      body: "to deliver this award to Tamilnadu Petro Products and Hindustan Teleprinters Ltd. during 1991.",
+      year: "1997",
+      recipients: "MRF Ltd.",
+      presenter:
+        "Presented by His Excellency Dr. P. C. Alexander, Governor of Tamil Nadu",
     },
     {
-      name: "Shri P. A. Sangma",
-      role: "Honourable Minister for Labour, Government of India",
-      body: "to deliver this award to Chemplast in 1992.",
+      year: "2002",
+      recipients: "Sri Krishna Sweets",
+      presenter:
+        "Presented by His Excellency Shri P. S. Ramamohan Rao, Governor of Tamil Nadu",
     },
     {
-      name: "Shri Kumara Mangalam",
-      role: "Honourable Minister for Power, Government of India",
-      body: "to deliver this award to Shasun Chemicals & Pharmaceuticals Ltd.",
+      year: "2005",
+      recipients:
+        "E.I.D. Parry (India) Ltd., Bannari Amman Sugars Ltd., M.M. Exports and Indian Bank",
+      presenter:
+        "Presented by Shri P. Chidambaram, Honourable Finance Minister, Government of India, at GRT Grand Hotel, Chennai",
     },
     {
-      name: "Shri P. Chidambaram",
-      role: "Honourable Finance Minister, Government of India",
-      body: "delivered the award to M/s. E.I.D. Parry (India) Ltd., Bannari Amman Sugars Ltd., M.M. Exports and Indian Bank on 8th July 2005 at GRT Grand Hotel, Chennai 17.",
+      year: "2010",
+      recipients:
+        "City Union Bank Ltd., Marg Group, Grundfos Pumps India Pvt. Ltd and Hyundai Motors India P Ltd.",
+      presenter:
+        "Presented by His Excellency Shri Surjit Singh Barnala, Governor of Tamil Nadu, at Raj Bhavan, Chennai",
     },
     {
-      name: "His Excellency Shri Surjit Singh Barnala",
-      role: "Governor of Tamil Nadu",
-      body: "delivered the award to M/s. City Union Bank Ltd., Marg Group, Grundfos Pumps India Pvt. Ltd. and Hyundai Motors India P Ltd. on 16th August 2010 at Raj Bhavan, Chennai.",
-    },
-    {
-      name: "Thiru. D. Jayakumar",
-      role: "Honourable Speaker, Tamil Nadu Legislative Assembly",
-      body: "delivered the Sir Visvesvaraya Industrial Awards to M/s. DP World Chennai, Indian Overseas Bank and LifeCell International Pvt. Ltd. on 6th August 2012 at Hotel Savera, Mylapore, Chennai.",
+      year: "2012",
+      recipients:
+        "DP World Chennai, Indian Overseas Bank, and LifeCell International Pvt. Ltd.",
+      presenter:
+        "Presented by the Honourable Speaker, Tamil Nadu Legislative Assembly, Thiru D. Jayakumar, at Hotel Savera, Mylapore, Chennai",
     },
   ],
 };
@@ -1111,21 +1237,32 @@ export const sectors = [
 
 /* ------------------------------- Gallery -------------------------------- */
 
-/** Photo gallery, grouped by event. Drop new files into /public and add them
-    to the relevant album. The gallery page and lightbox pick them up. */
-export const galleryAlbums = [
+/** Photo gallery, grouped by event and then by session. Drop new files into
+    /public/assets/gallery/<FOLDER> and list them here; the grid and lightbox
+    pick them up. Folder names contain spaces, so paths are encoded. */
+const G = (folder: string, file: string) =>
+  `/assets/gallery/${encodeURIComponent(folder)}/${encodeURIComponent(file)}`;
+
+const seq = (folder: string, count: number, extra: string[] = []) => [
+  ...Array.from({ length: count }, (_, i) => ({ src: G(folder, `${i + 1}.jpg`) })),
+  ...extra.map((f) => ({ src: G(folder, f) })),
+];
+
+export const galleryEvents = [
   {
-    title: "Engineers Day Celebration 2023",
-    meta: "15 September 2023 · Delhi Regional Board",
+    id: "techknow-2022",
+    title: "TECHKNOW 2022",
+    meta: "22–23 April 2022 · Anna University, Chennai",
     blurb:
-      "The National Conference on Employment Generation in the Present Economic Environment, held at Apparel House, Sector 44, Gurugram to mark Engineer's Day.",
-    photos: [
-      { src: "/event-1.png", caption: "Lighting of the lamp to open the conference" },
-      { src: "/event-1.1.png", caption: "Delegates on stage at the National Conference" },
-      { src: "/event-1.2.png", caption: "Office bearers and guests at the dais" },
-      { src: "/event-1.3.png", caption: "Felicitation of a guest of honour" },
-      { src: "/event-1.4.png", caption: "Presenting a bouquet to a delegate" },
-      { src: "/event-1.5.png", caption: "The full gathering on stage" },
+      "Two days of inauguration, technical sessions and valedictory, held at Anna University with the support of AIC–AU and SIDBI.",
+    albums: [
+      {
+        title: "Day 1 — Inauguration",
+        photos: seq("DAY 1 INAUGURATION", 8, ["day1 1.jpg"]),
+      },
+      { title: "Day 1 — Seminar", photos: seq("DAY 1 SEMINAR", 8) },
+      { title: "Day 2 — Seminar", photos: seq("DAY 2 SEMINAR", 8) },
+      { title: "Day 2 — Valedictory", photos: seq("DAY 2 VALEDICTORY", 8) },
     ],
   },
 ];
@@ -1180,11 +1317,65 @@ export const tnBoard = {
 
 /* --------------------- Office bearers & committee ----------------------- */
 
+/** Office bearers of the Tamil Nadu State Board. */
 export const stateOfficeBearers = [
-  { name: "Shri R. Radhakrishnan", role: "Chairman", city: "Chennai", email: "gs@aimoindia.com" },
-  { name: "To be announced", role: "Vice Chairman", city: "Coimbatore", email: "aimoindia@aimoindia.com" },
-  { name: "To be announced", role: "Hon. Secretary", city: "Chennai", email: "aimoindia@aimoindia.com" },
-  { name: "To be announced", role: "Hon. Treasurer", city: "Chennai", email: "aimoindia@aimoindia.com" },
+  {
+    role: "Chairman",
+    name: "Dr. A. Ayyakkannu",
+    note: "Leading the organisation with strategic vision and guidance.",
+  },
+  {
+    role: "Vice Chairman",
+    name: "Mr. S. Srinivasan",
+    note: "Supporting the Chairman in organisational leadership.",
+  },
+  {
+    role: "Vice Chairman",
+    name: "Mr. Sudhakar Mukundan",
+    note: "Assisting in organisational development and initiatives.",
+  },
+  {
+    role: "Hony. Secretary",
+    name: "Mr. Sureshkumar Radhakrishnan",
+    note: "Managing day-to-day operations and administration.",
+  },
+  {
+    role: "Treasurer",
+    name: "Mr. P. Kannan",
+    note: "Overseeing financial management and accountability.",
+  },
+];
+
+/** Committee members of the Tamil Nadu State Board, in published order. */
+export const committeeMembers = [
+  "Dr. A. Ayyakkannu",
+  "Mr. S. Srinivasan",
+  "Mr. Sudhakar Mukundan",
+  "Mr. Sureshkumar Radhakrishnan",
+  "Mr. P. Kannan",
+  "Mr. T. Ramesh Dugar",
+  "Mr. R. Radhakrishnan",
+  "Dr. M.S. Srinivasan",
+  "Dr. Harish L Metha",
+  "Mr. K.E. Raghunathan",
+  "Mr. U.P. Prakasham",
+  "Mr. S. Krishnamurthy",
+  "Dr. K.S. Giridharan",
+  "Mr. Mohammed Jameel Arafath",
+  "Mr. Mohankumar V",
+  "Mr. Monish Raaju S",
+  "Mr. Pankaj Jacob",
+  "Mr. R Rajamani",
+  "Mr. R Ranjith",
+  "Mr. M Sellamuthu",
+  "Mr. S Selvamani",
+  "Mr. M Sureshkumar",
+  "Mr. Vignesh Murali",
+  "Mr. Raammohan Kolandaivelu",
+  "Dr. G. Kolanthaivelu",
+  "Mr. K.S. Chandru",
+  "Mr. S. Prakash",
+  "Mr. L. Dhileepkumar",
 ];
 
 export const committees = [
@@ -1308,10 +1499,10 @@ export const hallBooking = {
   ],
   bookingContact: {
     attn: "The Manager",
-    org: "All India Manufacturers' Organisation, IR & D Trust",
+    org: "All India Manufacturers' Organisation (TNSB), IR & D Trust",
     addressLines: [
       "Round Table House, 2nd Floor",
-      "80 Nungambakkam High Road",
+      "80/69, Nungambakkam High Road",
       "Chennai – 600 034",
     ],
     phones: ["2822 8383", "90921 40000"],
@@ -1323,10 +1514,10 @@ export const hallBooking = {
 /* ------------------------------ Magazine -------------------------------- */
 
 export const magazine = {
-  name: "AIMO Industry Review",
+  name: "AIMO TNSB Industry Review",
   cadence: "Quarterly",
   intro:
-    "A quarterly journal written largely by members, for members: case notes from the shop floor, scheme explainers, and the arguments AIMO is currently making in public.",
+    "A quarterly journal written largely by members, for members: case notes from the shop floor, scheme explainers, and the arguments AIMO TNSB is currently making in public.",
   sections: [
     "Cover story on a policy question facing the sector",
     "Member profile: one enterprise, examined properly",
@@ -1363,7 +1554,7 @@ export const magazine = {
 
 export const internship = {
   intro:
-    "AIMO places engineering, management and polytechnic students into member enterprises for structured internships: real shop-floor and back-office work, supervised, with a written assessment at the end.",
+    "AIMO TNSB places engineering, management and polytechnic students into member enterprises for structured internships: real shop-floor and back-office work, supervised, with a written assessment at the end.",
   duration: "4 to 12 weeks · Summer and winter cycles",
   tracks: [
     {
@@ -1389,10 +1580,10 @@ export const internship = {
   ],
   studentSteps: [
     "Apply with your CV, college and preferred track",
-    "AIMO matches you to a member enterprise near you",
+    "AIMO TNSB matches you to a member enterprise near you",
     "Interview with the host unit",
     "Complete the internship with a named supervisor",
-    "Receive a joint certificate from AIMO and the host",
+    "Receive a joint certificate from AIMO TNSB and the host",
   ],
   hostSteps: [
     "Tell us the track, duration and number of interns",
@@ -1402,3 +1593,119 @@ export const internship = {
     "Submit a short assessment at the end",
   ],
 };
+
+/* --------------------- Internship testimonials -------------------------- */
+
+/** Written by interns at the end of their placement, in their own words.
+    Portraits live in /public/assets/Interns. To add a new testimonial,
+    drop the photo in that folder and append an entry here. */
+export type InternTestimonial = {
+  name: string;
+  affiliation: string;
+  photo: string;
+  /** One entry per paragraph. */
+  quote: string[];
+};
+
+export const internshipTestimonials: InternTestimonial[] = [
+  {
+    name: "Priyadharshini V",
+    affiliation: "AIMO-TNSB",
+    photo: "/assets/Interns/priya.png",
+    quote: [
+      "I had a great experience and accomplished a lot during my internship at AIMO (TNSB). It gave me a conducive work environment where I could pick up a lot of fresh knowledge about businesses and organisations. I learned more during this time than I ever imagined. The vast array of options our nation offers to diplomats, grads, and working professionals was exciting. I gained knowledge of graphic designing and a variety of other crucial abilities that are needed in the modern professional world. One of the best parts of our entire internship was developing AIMO Times. I gathered much knowledge in the classroom, but a hands-on approach has been invaluable. It has served as a beneficial ending to my formal education.",
+    ],
+  },
+  {
+    name: "Sathya Baamaa",
+    affiliation: "AIMO-TNSB",
+    photo: "/assets/Interns/sathyabaama.png",
+    quote: [
+      "This internship provided me with a wonderful opportunity to learn about the real life work experience. I realized how different the work environment is from the professional environment. I had hands-on experience on how to cold call other companies and how to interact with them. The development of the first edition of AIMO Times and participating in the Conclave event conducted about the skill development initiatives of India was very memorable. I also gained knowledge on effectively interacting with my peers and handling conflicts. It has helped me unleash my creativity by designing and video editing. This has helped me grow as an individual and see where my unseen potential lies.",
+    ],
+  },
+  {
+    name: "Keerthy M",
+    affiliation: "AIMO-TNSB",
+    photo: "/assets/Interns/keerthi.png",
+    quote: [
+      "This internship provided me with ample opportunities to learn how to blend in with my peers and work seamlessly, enabling me to increase my ability to adapt to different situations which need my cooperation to complete the assigned tasks. Working here has inculcated habits like talking to various individuals with different personalities increasing my awareness of face to face human interactions. Participating in the Conclave event about skill development initiatives of India and creation of AIMO Times truly expanded my skill set. It has also helped me seek various opinions and suggestions regarding my tasks helping me complete my task to the best of my ability with efficiency.",
+    ],
+  },
+  {
+    name: "Madhumitha U",
+    affiliation: "AIMO-TNSB",
+    photo: "/assets/Interns/madhumitha.png",
+    quote: [
+      "This internship has helped me gain practical knowledge on aspects like coordinating with others, discussing potential ideas with my peers. The conducive environment stimulated my desire to work and learn by giving my 100% to every task that is assigned to me. I had the exclusive opportunity to interact with this company and various other individuals enriching my knowledge and skills at the same time. Interacting with others has helped see things from different perspectives and in exploring various possibilities of different aspects in a task.",
+    ],
+  },
+  {
+    name: "Haripriya S",
+    affiliation: "AIMO-TNSB",
+    photo: "/assets/Interns/haripriya.png",
+    quote: [
+      "The internship here has been a pleasant learning experience. I had the opportunity to enhance my communication skills. The environment is conducive helping me to work to my full ability with little to no distractions. I had the chance to work with more peers, improving my social interactions with others. I am having a near work experience along with enriching my knowledge in various aspects. This internship helped my growth in understanding requirements of a particular job assigned to me and helpful in improvising my approach to complete a task. The creation of AIMO Times was one of the highlights of our whole internship experience.",
+    ],
+  },
+  {
+    name: "Kaviya P",
+    affiliation: "III B.COM · Guru Shree Shantivijai Jain College for Women",
+    photo: "/assets/Interns/kaviya.jpg",
+    quote: [
+      "My experience @aimo TNSB as an intern:",
+      "My internship at aimo was one of the finest experience in my life. Myself and my fellow academic interns were with large hopes when we got selected. With that hopes we stepped into the world of industry. Apart from studying industries we were awestruck by their activities about various genres they are working on like programmes through charities, Training and placement, workshops for students and budding entrepreneurs through which we met our hopes in reality.",
+      "As a team of 7 we jointly for first time launched a Youtube channel for the 80 years old AIMO TNSB and cultivated Teamwork, leadership qualities and organising events.",
+      "We are amazed by the way they focus on future pillars of India to take over the industry sectors by providing various knowledge about schemes and training and development programmes.",
+    ],
+  },
+  {
+    name: "Sangeetha S",
+    affiliation: "III B.COM · Guru Shree Shantivijai Jain College for Women",
+    photo: "/assets/Interns/sangeetha.jpg",
+    quote: [
+      "In Internship my experience is, though it's a one of the eldest Chamber of commerce, I thought its only for business people, and not for job seekers like me. However, thru this intern even we have conducted job awareness programme, later I came to know that they are catering with GOI Enterprises like Logistic skill sector council, - LogSkill Solutions, etc. And AIMO TNSB also have tie up with Anna University and conducting mega event called TECHKNOW, to identify and act as a ignitor of hidden talented engineers and award them with business/job opportunities, which means AIMO TNSB also for students and educational institutions. Thank you giving me this wonderful opportunity.",
+    ],
+  },
+  {
+    name: "Sridevi S",
+    affiliation: "III B.COM · Guru Shree Shantivijai Jain College for Women",
+    photo: "/assets/Interns/sridevi.jpg",
+    quote: [
+      "First of all thank you for giving me this wonderful opportunity. In Internship we understood and learned many new things, to mention few: there are so many schemes available for Entrepreneurs, which is not known or not reached to them. Though there are few amendments which are against Entrepreneurs, most of them are for them. And business supports for business persons right from the platform vendors to Medium Enterprises, (which is bigger industry under msme category.) Through this journey I learned many things.",
+    ],
+  },
+  {
+    name: "Priyanka K",
+    affiliation: "III B.COM · Guru Shree Shantivijai Jain College for Women",
+    photo: "/assets/Interns/priyanka.jpg",
+    quote: [
+      "During this internship period, i have gained work experience related to industries. We undergone a six-week of internship at AIMO-TNSB. Every week we were conducted webinars through online to create awareness among students. I also gained a better understanding about industries and new references for my future. Thank you for giving me the wonderful opportunity to explore myself.",
+    ],
+  },
+  {
+    name: "Bagya Lakshmi C N",
+    affiliation: "III B.COM · Guru Shree Shantivijai Jain College for Women",
+    photo: "/assets/Interns/bagya.jpg",
+    quote: [
+      "During my internship I was fascinated by the world of industry and the way its components have been changing to suit the current needs. I was highly motivated and interested into offering services to the manufacturers/entrepreneurs by creating value for them. As fresh students we got to have exposure in the digital platform. To conduct webinars, aimo gave us freehand to conduct awareness programme among various issues.",
+    ],
+  },
+  {
+    name: "Keerthana",
+    affiliation: "III B.COM · Guru Shree Shantivijai Jain College for Women",
+    photo: "/assets/Interns/noname.jpg",
+    quote: [
+      "Educate the existing entrepreneur about various schemes from state and central govts, helping start ups, incubations, students to be a successful entrepreneurs. Job assistance for the students etc. To represent small, tiny sectors and their wants and needs, to state and central govt.",
+      "Thru AIMO TNSB Internship, we had chance to witness the opportunity to become \u201ca future Entrepreneur\u201d. The schemes and various funding available from various government institution to help innovative ideas, and supports from the Government both state and central etc. And we don't need to roam around to get all these details just to become a \u201cMember of AIMO TNSB\u201d, they will take care, even if not a member they are ready to help, as a Non-Profit, service Oriented Organisation. For the first time, treated like a fully grown and responsible adult.",
+    ],
+  },
+  {
+    name: "Jeevitha",
+    affiliation: "III B.COM · Guru Shree Shantivijai Jain College for Women",
+    photo: "/assets/Interns/jeevitha.jpg",
+    quote: [
+      "My internship as a student has been the most rewarding and motivational. Throughout my internship experience, I was able to develop and foster a truly positive and compassionate learning environment. I am confident in progress, growth and development. I would not have the knowledge or skills I have today if it were not for my internship experience and I am looking forward to where my career in education takes me in the future.",
+    ],
+  },
+];

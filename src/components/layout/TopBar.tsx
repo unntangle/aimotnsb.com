@@ -50,7 +50,7 @@ export default function TopBar() {
           </a>
           <Link href="/contact" className="flex items-center gap-2 transition-colors hover:text-white">
             <MapPin className="h-3.5 w-3.5 text-brand" />
-            Sir P M Road, Fort, Mumbai
+            Nungambakkam High Road, Chennai
           </Link>
         </div>
       </div>

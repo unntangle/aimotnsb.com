@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Link from "next/link";
 import { Calendar, ExternalLink } from "lucide-react";
 import SectionHeading from "@/components/ui/SectionHeading";
 import { mediaCoverage } from "@/lib/site";
@@ -62,12 +61,6 @@ export default function LatestNews() {
               </div>
             </article>
           ))}
-        </div>
-
-        <div className="mt-12 text-center">
-          <Link href="/press" className="btn btn-outline">
-            All press coverage
-          </Link>
         </div>
       </div>
     </section>

@@ -10,7 +10,7 @@ import { contact, img } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Reach the AIMO National Secretariat in Mumbai for membership, partnership, press and event enquiries.",
+    "Reach AIMO TNSB at the Tamil Nadu State Board office in Nungambakkam, Chennai, for membership, partnership and event enquiries.",
 };
 
 export default function ContactPage() {
@@ -22,20 +22,28 @@ export default function ContactPage() {
     <>
       <PageHero
         eyebrow="Get In Touch"
-        title="Contact the National Secretariat"
-        intro="Membership, partnership, press or events: write to us and we will route your enquiry to the right desk or State Board."
-        image={img.mumbai}
+        title="Contact Us"
+        intro="Membership, partnership or events: write to the Tamil Nadu State Board and we will route your enquiry to the right desk."
+        image={img.aimoHall}
         crumb="Contact"
       />
 
       {/* Cards */}
       <section className="py-20 lg:py-24">
         <div className="shell">
+          <div className="mx-auto mb-12 max-w-2xl text-center">
+            <p className="eyebrow mb-3">Write To</p>
+            <h2 className="text-3xl">{contact.attn}</h2>
+            <p className="mt-3 text-[15.5px] leading-relaxed text-slatey">
+              {contact.org}
+            </p>
+          </div>
+
           <div className="grid gap-6 md:grid-cols-3">
             {[
               {
                 icon: MapPin,
-                title: "Head Office",
+                title: "Office",
                 lines: contact.addressLines,
               },
               {
@@ -43,6 +51,7 @@ export default function ContactPage() {
                 title: "Telephone",
                 lines: contact.phones,
                 hrefPrefix: "tel:",
+                labels: contact.phoneLabels,
               },
               {
                 icon: Mail,
@@ -57,14 +66,14 @@ export default function ContactPage() {
                 </span>
                 <h3 className="mt-5 text-xl">{c.title}</h3>
                 <div className="mt-3 space-y-1 text-[14.5px] text-slatey">
-                  {c.lines.map((l) =>
+                  {c.lines.map((l, i) =>
                     c.hrefPrefix ? (
                       <a
                         key={l}
                         href={`${c.hrefPrefix}${l.replace(/\s/g, "")}`}
                         className="block break-all hover:text-brand"
                       >
-                        {l}
+                        {c.labels ? `${c.labels[i]}: ${l}` : l}
                       </a>
                     ) : (
                       <span key={l} className="block">
@@ -89,16 +98,16 @@ export default function ContactPage() {
         <div className="shell grid items-start gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:gap-16">
           <div className="lg:sticky lg:top-28">
             <p className="eyebrow mb-3">Partnership</p>
-            <h2 className="text-3xl">Partner with AIMO</h2>
+            <h2 className="text-3xl">Partner with AIMO TNSB</h2>
             <p className="mt-5 text-[15.5px] leading-relaxed text-slatey">
-              AIMO is ready to partner with organisations that share our values, to jointly
-              develop programmes that benefit the business fraternity. We work through
-              cross-promotion, and the arrangement is designed so that smaller
+              AIMO TNSB is ready to partner with organisations that share our values, to
+              jointly develop programmes that benefit the business fraternity. We work
+              through cross-promotion, and the arrangement is designed so that smaller
               organisations get a louder voice by partnering with us.
             </p>
             <p className="mt-4 text-[15.5px] leading-relaxed text-slatey">
-              If you believe your organisation could partner AIMO in a mutually beneficial
-              association, write to{" "}
+              If you believe your organisation could partner AIMO TNSB in a mutually
+              beneficial association, write to{" "}
               <a
                 href={`mailto:${contact.emails[0]}`}
                 className="font-medium text-brand link-underline"
@@ -111,7 +120,7 @@ export default function ContactPage() {
             <div className="relative mt-8 aspect-[4/3] overflow-hidden rounded-xl">
               <Img
                 src={img.handshake}
-                alt="AIMO partnership discussion"
+                alt="AIMO TNSB partnership discussion"
                 sizes="(max-width: 1024px) 100vw, 40vw"
                 seed="contact-partner"
                 className="object-cover"
@@ -133,12 +142,12 @@ export default function ContactPage() {
         <div className="shell">
           <SectionHeading
             eyebrow="Find Us"
-            title="Jeevan Sahakar, Fort, Mumbai"
-            intro="The National Secretariat sits in the Fort business district, a short walk from Churchgate and CSMT."
+            title="Round Table House, Nungambakkam, Chennai"
+            intro="The State Board office is on Nungambakkam High Road, a short distance from Loyola College and Sterling Road."
           />
           <div className="mt-12 overflow-hidden rounded-xl border border-hairline">
             <iframe
-              title="AIMO head office location"
+              title="AIMO TNSB office location"
               src={mapSrc}
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"

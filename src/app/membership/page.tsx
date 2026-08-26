@@ -27,7 +27,7 @@ import {
 export const metadata: Metadata = {
   title: "Membership",
   description:
-    "Why manufacturers join the All India Manufacturers' Organisation: member benefits and how to enrol.",
+    "Why manufacturers join AIMO TNSB, the Tamil Nadu State Board of the All India Manufacturers' Organisation: member benefits and how to enrol.",
 };
 
 const iconMap = {
@@ -42,7 +42,7 @@ const iconMap = {
 const faqs = [
   [
     "Do I need to be a manufacturer?",
-    "No. AIMO's membership includes services MSMEs, which now form the largest part of the Indian economy. If your enterprise is registered and operating, you are eligible.",
+    "No. AIMO TNSB's membership includes services MSMEs, which now form the largest part of the Indian economy. If your enterprise is registered and operating, you are eligible.",
   ],
   [
     "Which State Board should I join?",
@@ -77,7 +77,7 @@ export default function MembershipPage() {
       <section id="why-join" className="scroll-mt-28 py-20 lg:py-24">
         <div className="shell grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
           <div>
-            <p className="eyebrow mb-3">Why Join AIMO</p>
+            <p className="eyebrow mb-3">Why Join AIMO TNSB</p>
             <h2 className="text-3xl sm:text-4xl">
               A smaller organisation gets a louder voice by standing with others
             </h2>
@@ -96,15 +96,15 @@ export default function MembershipPage() {
               consultation window.
             </p>
             <p className="mt-4 text-[15.5px] leading-relaxed text-slatey">
-              Traditionally AIMO members have come from small, medium and large scale
+              Traditionally AIMO TNSB members have come from small, medium and large scale
               industries across the country: engineering, chemicals, pharmaceuticals, food
               processing and services. More recently we have seen a marked surge of interest
-              from start-ups and new-age entrepreneurs, who find in AIMO a credible support
-              and a genuine voice for their concerns at the policy level.
+              from start-ups and new-age entrepreneurs, who find in AIMO TNSB a credible
+              support and a genuine voice for their concerns at the policy level.
             </p>
             <p className="mt-4 text-[15.5px] leading-relaxed text-slatey">
-              AIMO works through cross-promotion and partnership. We are glad to work with
-              organisations that share our values to jointly build programmes of real
+              AIMO TNSB works through cross-promotion and partnership. We are glad to work
+              with organisations that share our values to jointly build programmes of real
               benefit to the business fraternity.
             </p>
 
@@ -219,9 +219,9 @@ export default function MembershipPage() {
             <div className="card bg-navy p-8 text-white">
               <h3 className="text-xl text-white">Ready to join?</h3>
               <p className="mt-3 text-[14.5px] leading-relaxed text-white/65">
-                Fill in the membership form and the printed AIMO application downloads
-                automatically once you submit. Sign it and send the hard copy to your
-                State Board.
+                Fill in the membership form and the printed AIMO TNSB application
+                downloads automatically once you submit. Sign it and send the hard copy to
+                your State Board.
               </p>
 
               <Link href="/membership/apply" className="btn btn-primary mt-6 w-full">

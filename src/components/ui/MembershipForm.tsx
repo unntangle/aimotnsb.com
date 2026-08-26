@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { Check, Download, Send } from "lucide-react";
-import { membershipFormPdf, membershipTiers, stateBoards } from "@/lib/site";
+import { membershipFormFile, membershipTiers, stateBoards } from "@/lib/site";
 
 const sectorOptions = [
   "Engineering & Machine Tools",
@@ -48,8 +48,8 @@ export default function MembershipForm() {
   /** Pull the printed application down as soon as the form is submitted. */
   const downloadForm = () => {
     const a = document.createElement("a");
-    a.href = membershipFormPdf;
-    a.download = "AIMO-membership-form.pdf";
+    a.href = membershipFormFile.href;
+    a.download = membershipFormFile.filename;
     document.body.appendChild(a);
     a.click();
     a.remove();
@@ -82,11 +82,15 @@ export default function MembershipForm() {
           <strong className="text-navy">{form.board}</strong> board has been recorded.
         </p>
         <p className="mt-3 max-w-lg text-[15px] leading-relaxed text-slatey">
-          The printed AIMO membership form has started downloading. Sign it and send the
-          hard copy to your State Board along with proof of payment.
+          The printed AIMO TNSB membership form has started downloading. Sign it and send
+          the hard copy to your State Board along with proof of payment.
         </p>
 
-        <a href={membershipFormPdf} download className="btn btn-primary mt-7">
+        <a
+          href={membershipFormFile.href}
+          download={membershipFormFile.filename}
+          className="btn btn-primary mt-7"
+        >
           <Download className="h-4 w-4" />
           Download didn&rsquo;t start? Get the form
         </a>

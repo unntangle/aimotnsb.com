@@ -112,12 +112,17 @@ export default function UpcomingEvent() {
           </div>
 
           <div className="mt-9 flex flex-wrap items-center gap-6">
-            <Link href="/events" className="btn btn-primary">
-              Join Now
-            </Link>
+            <a
+              href={featuredEvent.registerUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn btn-primary"
+            >
+              Register Now
+            </a>
             <a
               href={featuredEvent.brochure}
-              download
+              download={featuredEvent.brochureFilename}
               className="btn btn-outline"
             >
               <Download className="h-4 w-4" />
