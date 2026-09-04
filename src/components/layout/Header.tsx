@@ -7,11 +7,13 @@ import { useEffect, useState } from "react";
 import { ChevronDown, Menu, X } from "lucide-react";
 import { nav } from "@/lib/site";
 
+/* Statically imported so Next infers the true intrinsic size at build time —
+   height is driven by CSS (`h-* w-auto`), the import fixes the aspect ratio. */
+import badgeRight from "../../../public/assets/aimo-80logo-right.jpg";
+
 /* Intrinsic proportions of the supplied artwork. Height is driven by CSS
    (`h-* w-auto`), so these only fix the aspect ratio. */
-const WORDMARK = { w: 800, h: 175 };
 const EMBLEM = { w: 263, h: 300 };
-const BADGE = { w: 300, h: 300 };
 
 export default function Header() {
   const pathname = usePathname();
@@ -58,29 +60,24 @@ export default function Header() {
             />
           </Link>
 
-          {/* Centred wordmark */}
+          {/* Centred wordmark — typeset, not artwork */}
           <Link
             href="/"
-            aria-label="All India Manufacturers' Organisation (TNSB) — home"
-            className="flex min-w-0 flex-1 items-center justify-center"
+            className="flex min-w-0 flex-1 flex-col items-center justify-center text-center"
           >
-            <Image
-              src="/assets/aimo-logo-center.png"
-              alt="All India Manufacturers' Organisation — founded by Bharat Ratna Sir M. Visvesvaraya in 1941"
-              width={WORDMARK.w}
-              height={WORDMARK.h}
-              priority
-              className="h-11 w-auto max-w-full sm:h-14 lg:h-[86px]"
-            />
+            <span className="font-masthead text-[11.5px] font-bold uppercase leading-[1.25] tracking-[0.015em] text-navy sm:text-[17px] lg:text-[26px]">
+              All India Manufacturers&rsquo; Organisation (TNSB)
+            </span>
+            <span className="mt-0.5 font-masthead text-[9px] leading-snug text-navy sm:text-[11px] lg:text-[13.5px]">
+              (Founded by Bharat Ratna Sir M. Visvesvaraya in 1941)
+            </span>
           </Link>
 
-          {/* 80th-year commemorative badge — top-right anchor */}
+          {/* Commemorative emblem — top-right anchor */}
           <div className="flex shrink-0 items-center">
             <Image
-              src="/assets/aimo-80logo-right.png"
-              alt="AIMO — 80 years, 2023–2024"
-              width={BADGE.w}
-              height={BADGE.h}
+              src={badgeRight}
+              alt="AIMO commemorative emblem"
               priority
               className="h-12 w-auto sm:h-[60px] lg:h-[94px]"
             />

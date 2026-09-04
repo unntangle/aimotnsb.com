@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Poppins } from "next/font/google";
+import { Inter, Poppins, Tinos } from "next/font/google";
 import "./globals.css";
 import TopBar from "@/components/layout/TopBar";
 import Header from "@/components/layout/Header";
@@ -17,6 +17,15 @@ const poppins = Poppins({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700", "800"],
   variable: "--font-poppins",
+  display: "swap",
+});
+
+/* Times-metric serif used only for the masthead wordmark, so the typeset
+   lockup reads the same as the printed/legacy letterhead. */
+const tinos = Tinos({
+  subsets: ["latin"],
+  weight: ["400", "700"],
+  variable: "--font-tinos",
   display: "swap",
 });
 
@@ -58,7 +67,10 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en-IN" className={`${inter.variable} ${poppins.variable}`}>
+    <html
+      lang="en-IN"
+      className={`${inter.variable} ${poppins.variable} ${tinos.variable}`}
+    >
       <body className="min-h-screen antialiased">
         <a
           href="#main"

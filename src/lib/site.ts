@@ -50,8 +50,7 @@ export const img = {
   /* ---- Home page hero banners ----
      Swapping a slide's photo is a one-line change: edit the file the
      key points to here, or point a slide at a different key below. */
-  hero1: "/assets/hero/hero1.jpg",
-  hero2: "/assets/hero/hero2.jpg",
+  hero1: "/assets/hero/hero1.webp",
   hero3: "/assets/hero/hero3.jpg",
   hero4: "/assets/hero/hero4.jpg",
   hero5: "/assets/hero/hero5.jpg",
@@ -152,7 +151,7 @@ export const heroSlides = [
     eyebrow: "Why Become an AIMO Member?",
     title: "A Smaller Enterprise Gets a Louder Voice",
     body: "One promoter with a grievance is noise. Two hundred units with the same objection and the numbers to back it is a sector position, and that is what changes a rule. Policy representation, credit clinics, research and recognition, since 1941.",
-    image: img.hero2,
+    image: img.aimoEvent2,
     cta: { label: "Why Join AIMO TNSB", href: "/membership" },
     cta2: { label: "Become a Member", href: "/membership/apply" },
     alt: "AIMO TNSB members networking at a chapter meeting",
@@ -1260,7 +1259,16 @@ export const galleryEvents = [
         title: "Day 1 — Inauguration",
         photos: seq("DAY 1 INAUGURATION", 8, ["day1 1.jpg"]),
       },
-      { title: "Day 1 — Seminar", photos: seq("DAY 1 SEMINAR", 8) },
+      {
+        title: "Day 1 — Seminar",
+        /* 9 and 10 are the two frames lifted from the old home page hero;
+           they lead the album, then the original eight follow in order. */
+        photos: [
+          { src: G("DAY 1 SEMINAR", "9.jpg") },
+          { src: G("DAY 1 SEMINAR", "10.jpg") },
+          ...seq("DAY 1 SEMINAR", 8),
+        ],
+      },
       { title: "Day 2 — Seminar", photos: seq("DAY 2 SEMINAR", 8) },
       { title: "Day 2 — Valedictory", photos: seq("DAY 2 VALEDICTORY", 8) },
     ],

@@ -19,6 +19,7 @@
   /* ---- Type ---- */
   --font-display: var(--font-poppins), ui-sans-serif, system-ui, sans-serif;
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-masthead: var(--font-tinos), "Times New Roman", Times, ui-serif, serif;
 
   /* ---- Motion ---- */
   --ease-out-soft: cubic-bezier(0.22, 1, 0.36, 1);
