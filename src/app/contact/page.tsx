@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { Suspense } from "react";
 import { ArrowRight, Clock, Mail, MapPin, Phone } from "lucide-react";
 import PageHero from "@/components/layout/PageHero";
 import SectionHeading from "@/components/ui/SectionHeading";
@@ -94,7 +95,7 @@ export default function ContactPage() {
       </section>
 
       {/* Partner + form */}
-      <section className="bg-mist py-20 lg:py-24">
+      <section id="enquiry" className="scroll-mt-24 bg-mist py-20 lg:py-24">
         <div className="shell grid items-start gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:gap-16">
           <div className="lg:sticky lg:top-28">
             <p className="eyebrow mb-3">Partnership</p>
@@ -133,7 +134,11 @@ export default function ContactPage() {
             </Link>
           </div>
 
-          <ContactForm />
+          {/* ContactForm reads ?email= and ?subject= from the URL, so it needs
+              a boundary for the build to prerender the rest of this page. */}
+          <Suspense fallback={<div className="card min-h-[640px] p-8 sm:p-10" />}>
+            <ContactForm />
+          </Suspense>
         </div>
       </section>
 

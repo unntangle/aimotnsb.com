@@ -199,7 +199,7 @@
     animation: fadeIn 0.9s var(--ease-out-soft) both;
   }
   .ken {
-    animation: ken 12s ease-out both;
+    animation: ken 4s ease-out both;
   }
   .delay-1 { animation-delay: 0.12s; }
   .delay-2 { animation-delay: 0.24s; }

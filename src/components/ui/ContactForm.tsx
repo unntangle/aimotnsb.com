@@ -1,6 +1,7 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import { useSearchParams } from "next/navigation";
 import { Check, Send } from "lucide-react";
 
 const subjects = [
@@ -12,15 +13,29 @@ const subjects = [
 ];
 
 export default function ContactForm() {
+  const params = useSearchParams();
+
+  // Values handed over from elsewhere on the site, e.g. the newsletter strip.
+  const prefillEmail = params.get("email")?.trim() ?? "";
+  const prefillSubject = params.get("subject")?.trim() ?? "";
+
+  const nameRef = useRef<HTMLInputElement>(null);
+
   const [sent, setSent] = useState(false);
   const [form, setForm] = useState({
     name: "",
-    email: "",
+    email: prefillEmail,
     phone: "",
     company: "",
-    subject: subjects[0],
+    subject: subjects.includes(prefillSubject) ? prefillSubject : subjects[0],
     message: "",
   });
+
+  // Arriving with the email already filled in, the next thing needed is the
+  // name, so put the cursor there instead of at the top of the form.
+  useEffect(() => {
+    if (prefillEmail) nameRef.current?.focus({ preventScroll: true });
+  }, [prefillEmail]);
 
   const set = (k: keyof typeof form) => (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) =>
     setForm({ ...form, [k]: e.target.value });
@@ -64,6 +79,7 @@ export default function ContactForm() {
         <Field label="Your name *" id="name">
           <input
             id="name"
+            ref={nameRef}
             required
             value={form.name}
             onChange={set("name")}

@@ -4,6 +4,7 @@ import { ArrowRight, CalendarDays, Camera, Store, Tag, Trophy, Users } from "luc
 import PageHero from "@/components/layout/PageHero";
 import SectionHeading from "@/components/ui/SectionHeading";
 import UpcomingEvent from "@/components/home/UpcomingEvent";
+import PanelProgramme from "@/components/events/PanelProgramme";
 import Newsletter from "@/components/home/Newsletter";
 import { img, sponsorTiers } from "@/lib/site";
 
@@ -26,8 +27,10 @@ export default function EventsPage() {
 
       <UpcomingEvent />
 
+      <PanelProgramme />
+
       {/* Sponsorship */}
-      <section id="sponsor" className="scroll-mt-28 py-20 lg:py-24">
+      <section id="sponsor" className="scroll-mt-28 bg-mist py-20 lg:py-24">
         <div className="shell">
           <SectionHeading
             eyebrow="Partner With Us"
@@ -95,7 +98,7 @@ export default function EventsPage() {
       </section>
 
       {/* Links onward */}
-      <section className="bg-mist py-20 lg:py-24">
+      <section className="py-20 lg:py-24">
         <div className="shell grid gap-6 md:grid-cols-3">
           {[
             {

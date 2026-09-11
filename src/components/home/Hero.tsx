@@ -6,7 +6,7 @@ import { ArrowRight } from "lucide-react";
 import Img from "@/components/ui/Img";
 import { heroSlides } from "@/lib/site";
 
-const INTERVAL = 7000;
+const INTERVAL = 2000;
 
 export default function Hero() {
   const [index, setIndex] = useState(0);
@@ -33,7 +33,7 @@ export default function Hero() {
       {heroSlides.map((slide, i) => (
         <div
           key={slide.title}
-          className={`absolute inset-0 transition-opacity duration-1000 ${
+          className={`absolute inset-0 transition-opacity duration-700 ${
             i === index ? "opacity-100" : "opacity-0"
           }`}
           aria-hidden={i !== index}
