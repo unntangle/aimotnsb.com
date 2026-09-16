@@ -1,0 +1,246 @@
+@import "tailwindcss";
+
+@theme {
+  /* ---- Brand palette (adapted from the reference design) ---- */
+  --color-brand: #ee4b3e;
+  --color-brand-dark: #cf3a2e;
+  --color-brand-light: #ff6a5d;
+  --color-brand-soft: #fdeeec;
+
+  --color-navy: #0f1b3d;
+  --color-navy-700: #1a2a54;
+  --color-navy-600: #26386b;
+
+  --color-mist: #f5f7fa;
+  --color-ink: #17203a;
+  --color-slatey: #63708c;
+  --color-hairline: #e6e9f0;
+
+  /* ---- Type ---- */
+  --font-display: var(--font-poppins), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-masthead: var(--font-tinos), "Times New Roman", Times, ui-serif, serif;
+
+  /* ---- Motion ---- */
+  --ease-out-soft: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-hairline);
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  body {
+    background: #ffffff;
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    line-height: 1.75;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    letter-spacing: -0.015em;
+    line-height: 1.18;
+    color: var(--color-navy);
+    text-wrap: balance;
+  }
+
+  ::selection {
+    background: var(--color-brand);
+    color: #fff;
+  }
+}
+
+@layer components {
+  .shell {
+    width: 100%;
+    max-width: 1240px;
+    margin-inline: auto;
+    padding-inline: 1.25rem;
+  }
+
+  .eyebrow {
+    font-family: var(--font-display);
+    font-size: 0.8125rem;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--color-brand);
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    font-family: var(--font-display);
+    font-size: 0.9375rem;
+    font-weight: 600;
+    line-height: 1;
+    padding: 0.9rem 1.6rem;
+    border-radius: 0.35rem;
+    transition: all 0.25s var(--ease-out-soft);
+    white-space: nowrap;
+  }
+
+  .btn-primary {
+    background: var(--color-brand);
+    color: #fff;
+  }
+  .btn-primary:hover {
+    background: var(--color-navy);
+    transform: translateY(-2px);
+  }
+
+  .btn-navy {
+    background: var(--color-navy);
+    color: #fff;
+  }
+  .btn-navy:hover {
+    background: var(--color-brand);
+    transform: translateY(-2px);
+  }
+
+  .btn-ghost {
+    background: transparent;
+    color: #fff;
+    border: 1.5px solid rgba(255, 255, 255, 0.5);
+  }
+  .btn-ghost:hover {
+    background: #fff;
+    color: var(--color-navy);
+    border-color: #fff;
+  }
+
+  .btn-outline {
+    background: transparent;
+    color: var(--color-navy);
+    border: 1.5px solid var(--color-hairline);
+  }
+  .btn-outline:hover {
+    border-color: var(--color-brand);
+    color: var(--color-brand);
+  }
+
+  .card {
+    background: #fff;
+    border: 1px solid var(--color-hairline);
+    border-radius: 0.75rem;
+    transition: all 0.3s var(--ease-out-soft);
+  }
+  .card:hover {
+    border-color: transparent;
+    box-shadow: 0 24px 50px -28px rgba(15, 27, 61, 0.4);
+    transform: translateY(-4px);
+  }
+
+  /* Decorative dotted grid used behind imagery in the reference layout */
+  .dot-grid {
+    background-image: radial-gradient(var(--color-brand) 1.4px, transparent 1.4px);
+    background-size: 14px 14px;
+    opacity: 0.35;
+  }
+
+  .link-underline {
+    background-image: linear-gradient(var(--color-brand), var(--color-brand));
+    background-size: 0% 1.5px;
+    background-repeat: no-repeat;
+    background-position: left bottom;
+    transition: background-size 0.3s var(--ease-out-soft);
+  }
+  .link-underline:hover {
+    background-size: 100% 1.5px;
+  }
+
+  /* --- Member card social icons: hidden until hover, then jiggle in --- */
+  .card-socials .social-icon {
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(14px) scale(0.6);
+  }
+
+  .member-card:hover .card-socials .social-icon,
+  .member-card:focus-within .card-socials .social-icon {
+    pointer-events: auto;
+    animation: jiggleIn 0.62s var(--ease-out-soft) forwards;
+  }
+
+  .member-card:hover .card-socials .social-icon:nth-child(2),
+  .member-card:focus-within .card-socials .social-icon:nth-child(2) {
+    animation-delay: 0.07s;
+  }
+  .member-card:hover .card-socials .social-icon:nth-child(3),
+  .member-card:focus-within .card-socials .social-icon:nth-child(3) {
+    animation-delay: 0.14s;
+  }
+  .member-card:hover .card-socials .social-icon:nth-child(4),
+  .member-card:focus-within .card-socials .social-icon:nth-child(4) {
+    animation-delay: 0.21s;
+  }
+}
+
+@layer utilities {
+  .fade-up {
+    animation: fadeUp 0.7s var(--ease-out-soft) both;
+  }
+  .fade-in {
+    animation: fadeIn 0.9s var(--ease-out-soft) both;
+  }
+  .ken {
+    animation: ken 4s ease-out both;
+  }
+  .delay-1 { animation-delay: 0.12s; }
+  .delay-2 { animation-delay: 0.24s; }
+  .delay-3 { animation-delay: 0.36s; }
+  .delay-4 { animation-delay: 0.48s; }
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(22px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes ken {
+  from { transform: scale(1.02); }
+  to { transform: scale(1.12); }
+}
+@keyframes jiggleIn {
+  0%   { opacity: 0; transform: translateY(14px) scale(0.6) rotate(0deg); }
+  50%  { opacity: 1; transform: translateY(-6px) scale(1.14) rotate(0deg); }
+  66%  { transform: translateY(2px) scale(0.97) rotate(-9deg); }
+  80%  { transform: translateY(-2px) scale(1.04) rotate(7deg); }
+  92%  { transform: translateY(0) scale(1) rotate(-3deg); }
+  100% { opacity: 1; transform: translateY(0) scale(1) rotate(0deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Thin, brand-tinted scrollbar */
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: var(--color-mist); }
+::-webkit-scrollbar-thumb { background: #c9cfdb; border-radius: 99px; }
+::-webkit-scrollbar-thumb:hover { background: var(--color-brand); }
