@@ -129,7 +129,7 @@ export default function UpcomingEvent() {
               Download Brochure
             </a>
             <Link
-              href="/events#sponsor"
+              href="/events/techknow-2026#sponsor"
               className="link-underline font-display text-[14.5px] font-semibold text-navy"
             >
               Sponsor the Summit

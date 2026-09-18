@@ -117,7 +117,7 @@ export const nav: NavItem[] = [
     href: "/events",
     children: [
       { label: "Upcoming Event", href: "/events" },
-      { label: "TECHKNOW Job Fair", href: "/events#job-fair" },
+      { label: "TECHKNOW Job Fair", href: "/events/techknow-2026#job-fair" },
       { label: "Past Events", href: "/events/past" },
       { label: "Photo Gallery", href: "/gallery" },
       { label: "Awards", href: "/awards" },
@@ -135,7 +135,7 @@ export const heroSlides = [
     title: "AIMO TNSB TECHKNOW 2026",
     body: "Two days on the questions that will decide the next decade of Indian manufacturing: export competitiveness, credit beyond collateral, energy costs and the skills pipeline. Ministers, bankers, buyers and 900 promoters at the Vivekananda Auditorium, Anna University, Chennai.",
     image: img.hero1,
-    cta: { label: "View Event Details", href: "/events" },
+    cta: { label: "View Event Details", href: "/events/techknow-2026" },
     alt: "Delegates at an AIMO national convention",
   },
   {
@@ -629,6 +629,8 @@ export const immediatePastTeam = [
 export const featuredEvent = {
   eyebrow: "Upcoming Event",
   title: "AIMO TNSB TECHKNOW 2026",
+  /** The event's own page, opened from the card on /events. */
+  href: "/events/techknow-2026",
   date: "2026-09-25T09:30:00+05:30",
   dateLabel: "25–26 September 2026",
   dayBadge: { day: "25", month: "Sep" },

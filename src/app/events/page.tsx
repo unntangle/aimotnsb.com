@@ -1,13 +1,12 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight, CalendarDays, Camera, Store, Tag, Trophy, Users } from "lucide-react";
+import { ArrowRight, Briefcase, CalendarDays, MapPin } from "lucide-react";
 import PageHero from "@/components/layout/PageHero";
 import SectionHeading from "@/components/ui/SectionHeading";
-import UpcomingEvent from "@/components/home/UpcomingEvent";
-import PanelProgramme from "@/components/events/PanelProgramme";
-import JobFair from "@/components/events/JobFair";
+import EventLinks from "@/components/events/EventLinks";
 import Newsletter from "@/components/home/Newsletter";
-import { img, sponsorTiers } from "@/lib/site";
+import Img from "@/components/ui/Img";
+import { featuredEvent, img, jobFair } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Events",
@@ -16,6 +15,8 @@ export const metadata: Metadata = {
 };
 
 export default function EventsPage() {
+  const jobFairOpenings = jobFair.companies.reduce((sum, c) => sum + c.total, 0);
+
   return (
     <>
       <PageHero
@@ -26,118 +27,80 @@ export default function EventsPage() {
         crumb="Events"
       />
 
-      <UpcomingEvent />
-
-      <JobFair />
-
-      <PanelProgramme />
-
-      {/* Sponsorship */}
-      <section id="sponsor" className="scroll-mt-28 bg-mist py-20 lg:py-24">
+      <section className="bg-mist py-20 lg:py-24">
         <div className="shell">
           <SectionHeading
-            eyebrow="Partner With Us"
-            title="Sponsorship categories & privileges"
-            intro="Five tiers, each carrying complimentary delegate passes, exhibition stalls and branding across the event."
+            eyebrow="Coming Up"
+            title="Upcoming events"
+            intro="Select an event to see the full programme, job fair details and registration."
           />
 
-          <div className="mt-14 space-y-4">
-            {sponsorTiers.map((t) => (
-              <article
-                key={t.name}
-                className="grid overflow-hidden rounded-xl border border-hairline md:grid-cols-[minmax(190px,230px)_1fr]"
-                style={{ backgroundColor: t.tint }}
-              >
-                {/* Tier name & amount */}
-                <div
-                  className="flex flex-col items-center justify-center gap-3 px-6 py-6 text-center"
-                  style={{ backgroundColor: t.accent }}
-                >
-                  <h3 className="font-display text-[15px] font-bold uppercase tracking-wider text-white">
-                    {t.name}
-                  </h3>
-                  <span className="rounded-full bg-navy/85 px-4 py-1.5 font-display text-[14px] font-semibold text-white">
-                    {t.amount}
+          <Link
+            href={featuredEvent.href}
+            className="card group mt-14 grid overflow-hidden lg:grid-cols-[1fr_1.15fr]"
+          >
+            {/* Image */}
+            <div className="relative aspect-[16/10] lg:aspect-auto lg:min-h-[380px]">
+              <Img
+                src={featuredEvent.image}
+                alt="Delegates at an AIMO TNSB TECHKNOW event"
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                seed="techknow-card"
+                className="object-cover transition-transform duration-700 group-hover:scale-105"
+              />
+              <div className="absolute left-5 top-5 bg-brand px-4 py-2.5 text-center text-white shadow-lg">
+                <span className="block font-display text-2xl font-extrabold leading-none">
+                  {featuredEvent.dayBadge.day}
+                </span>
+                <span className="mt-1 block text-[11.5px] font-medium uppercase tracking-widest">
+                  {featuredEvent.dayBadge.month}
+                </span>
+              </div>
+            </div>
+
+            {/* Content */}
+            <div className="flex flex-col p-7 sm:p-9">
+              <p className="eyebrow">Conference · Panel Discussions · Job Fair</p>
+              <h2 className="mt-3 text-2xl transition-colors group-hover:text-brand sm:text-3xl">
+                {featuredEvent.title}
+              </h2>
+
+              <div className="mt-4 space-y-2 text-[14.5px] font-medium text-navy">
+                <p className="flex items-center gap-2">
+                  <CalendarDays className="h-4 w-4 shrink-0 text-brand" />
+                  {featuredEvent.dateLabel}
+                </p>
+                <p className="flex items-start gap-2">
+                  <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-brand" />
+                  {featuredEvent.venue}
+                </p>
+              </div>
+
+              <p className="mt-5 text-[15px] leading-relaxed text-slatey">{featuredEvent.body}</p>
+
+              {/* Job fair callout */}
+              <div className="mt-6 flex items-start gap-3 rounded-lg border border-hairline bg-brand-soft/60 px-4 py-3.5">
+                <Briefcase className="mt-0.5 h-4 w-4 shrink-0 text-brand" />
+                <p className="text-[14px] leading-snug text-navy">
+                  <span className="font-semibold">Mega Job Fair · 19 September 2026</span>
+                  <span className="text-slatey">
+                    {" "}
+                    · {jobFair.companies.length} companies · {jobFairOpenings.toLocaleString("en-IN")}{" "}
+                    openings
                   </span>
-                </div>
+                </p>
+              </div>
 
-                {/* Privileges */}
-                <div className="grid gap-5 p-6 sm:grid-cols-3 sm:gap-0">
-                  {[
-                    { icon: Users, text: t.passes },
-                    { icon: Store, text: t.stalls },
-                    { icon: Tag, text: t.branding },
-                  ].map(({ icon: Icon, text }, i) => (
-                    <div
-                      key={text}
-                      className={`flex items-center gap-3.5 sm:px-5 ${
-                        i > 0 ? "sm:border-l sm:border-hairline" : ""
-                      }`}
-                    >
-                      <span
-                        className="grid h-11 w-11 shrink-0 place-items-center rounded-full border-2 bg-white"
-                        style={{ borderColor: t.accent, color: t.accent }}
-                      >
-                        <Icon className="h-5 w-5" />
-                      </span>
-                      <span className="text-[14.5px] leading-snug text-navy">{text}</span>
-                    </div>
-                  ))}
-                </div>
-              </article>
-            ))}
-          </div>
-
-          <div className="mt-10 flex flex-wrap items-center gap-5">
-            <Link href="/contact" className="btn btn-primary">
-              Enquire about sponsorship
-              <ArrowRight className="h-4 w-4" />
-            </Link>
-            <p className="text-[14px] text-slatey">
-              Stall sizes are quoted in feet. All amounts are exclusive of applicable taxes.
-            </p>
-          </div>
+              <span className="mt-7 inline-flex items-center gap-2 self-start font-display text-[15px] font-semibold text-brand">
+                View event details
+                <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+              </span>
+            </div>
+          </Link>
         </div>
       </section>
 
-      {/* Links onward */}
-      <section className="py-20 lg:py-24">
-        <div className="shell grid gap-6 md:grid-cols-3">
-          {[
-            {
-              href: "/events/past",
-              icon: CalendarDays,
-              title: "Past Events",
-              body: "Conclaves, clinics and conventions already held, with summary notes available to members.",
-            },
-            {
-              href: "/gallery",
-              icon: Camera,
-              title: "Photo Gallery",
-              body: "Photographs from council sessions, factory visits, workshops and award nights.",
-            },
-            {
-              href: "/awards",
-              icon: Trophy,
-              title: "Awards",
-              body: "Six categories recognising members who set the standard, judged on evidence and verified on site.",
-            },
-          ].map((c) => (
-            <Link key={c.href} href={c.href} className="card group p-8">
-              <span className="grid h-12 w-12 place-items-center rounded-xl bg-brand-soft text-brand transition-colors group-hover:bg-brand group-hover:text-white">
-                <c.icon className="h-5 w-5" />
-              </span>
-              <h3 className="mt-5 text-xl transition-colors group-hover:text-brand">
-                {c.title}
-              </h3>
-              <p className="mt-3 text-[14.5px] leading-relaxed text-slatey">{c.body}</p>
-              <span className="mt-5 inline-flex items-center gap-1.5 font-display text-[14px] font-semibold text-brand">
-                Open <ArrowRight className="h-4 w-4" />
-              </span>
-            </Link>
-          ))}
-        </div>
-      </section>
+      <EventLinks />
 
       <Newsletter />
     </>

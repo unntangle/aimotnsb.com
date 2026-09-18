@@ -10,6 +10,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/membership",
     "/membership/apply",
     "/events",
+    "/events/techknow-2026",
     "/events/past",
     "/gallery",
     "/awards",
