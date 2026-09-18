@@ -117,7 +117,6 @@ export const nav: NavItem[] = [
     href: "/events",
     children: [
       { label: "Upcoming Event", href: "/events" },
-      { label: "TECHKNOW Job Fair", href: "/events/techknow-2026#job-fair" },
       { label: "Past Events", href: "/events/past" },
       { label: "Photo Gallery", href: "/gallery" },
       { label: "Awards", href: "/awards" },
