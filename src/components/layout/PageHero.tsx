@@ -8,9 +8,11 @@ type Props = {
   intro?: string;
   image: string;
   crumb: string;
+  /** Optional middle breadcrumb, e.g. Events on an event's own page. */
+  parent?: { label: string; href: string };
 };
 
-export default function PageHero({ eyebrow, title, intro, image, crumb }: Props) {
+export default function PageHero({ eyebrow, title, intro, image, crumb, parent }: Props) {
   return (
     <section className="relative isolate overflow-hidden bg-navy">
       <div className="absolute inset-0 -z-10">
@@ -24,25 +26,33 @@ export default function PageHero({ eyebrow, title, intro, image, crumb }: Props)
         <div className="absolute inset-0 bg-gradient-to-r from-navy via-navy/85 to-navy/40" />
       </div>
 
-      <div className="shell py-20 lg:py-28">
+      <div className="shell py-10 lg:py-14">
         <div className="max-w-2xl fade-up">
-          {eyebrow && <p className="eyebrow mb-3">{eyebrow}</p>}
-          <h1 className="text-4xl text-white sm:text-5xl">{title}</h1>
+          {eyebrow && <p className="eyebrow mb-2">{eyebrow}</p>}
+          <h1 className="text-3xl text-white sm:text-4xl">{title}</h1>
           {intro && (
-            <p className="mt-5 text-[16px] leading-relaxed text-white/70">{intro}</p>
+            <p className="mt-3 text-[15px] leading-relaxed text-white/70">{intro}</p>
           )}
 
-          <nav className="mt-8 flex items-center gap-2 text-[13.5px] text-white/55">
+          <nav className="mt-5 flex items-center gap-2 text-[13.5px] text-white/55">
             <Link href="/" className="hover:text-brand">
               Home
             </Link>
             <ChevronRight className="h-3.5 w-3.5" />
+            {parent && (
+              <>
+                <Link href={parent.href} className="hover:text-brand">
+                  {parent.label}
+                </Link>
+                <ChevronRight className="h-3.5 w-3.5" />
+              </>
+            )}
             <span className="text-white">{crumb}</span>
           </nav>
         </div>
       </div>
 
-      <span className="absolute -bottom-16 right-8 hidden h-40 w-40 rotate-12 rounded-3xl bg-brand/25 lg:block" />
+      <span className="absolute -bottom-12 right-8 hidden h-28 w-28 rotate-12 rounded-3xl bg-brand/25 lg:block" />
     </section>
   );
 }
