@@ -5,6 +5,7 @@ import PageHero from "@/components/layout/PageHero";
 import SectionHeading from "@/components/ui/SectionHeading";
 import UpcomingEvent from "@/components/home/UpcomingEvent";
 import PanelProgramme from "@/components/events/PanelProgramme";
+import JobFair from "@/components/events/JobFair";
 import Newsletter from "@/components/home/Newsletter";
 import { img, sponsorTiers } from "@/lib/site";
 
@@ -26,6 +27,8 @@ export default function EventsPage() {
       />
 
       <UpcomingEvent />
+
+      <JobFair />
 
       <PanelProgramme />
 

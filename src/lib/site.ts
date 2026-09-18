@@ -117,6 +117,7 @@ export const nav: NavItem[] = [
     href: "/events",
     children: [
       { label: "Upcoming Event", href: "/events" },
+      { label: "TECHKNOW Job Fair", href: "/events#job-fair" },
       { label: "Past Events", href: "/events/past" },
       { label: "Photo Gallery", href: "/gallery" },
       { label: "Awards", href: "/awards" },
@@ -647,6 +648,130 @@ export const featuredEvent = {
     "Curated buyer–supplier matchmaking desk",
     "Bank and NBFC credit clinic for members",
   ],
+};
+
+/* ------------------- TECHKNOW 2026 Mega Job Fair ----------------------- */
+
+export type JobFairCompany = {
+  name: string;
+  location: string;
+  /** Total vacancies, as stated in the organisers' sheet. */
+  total: number;
+  /** Openings by type. Omit a key when the sheet gives no figure. */
+  openings: { regular?: number; internship?: number; apprenticeship?: number };
+  /** Eligible branches / qualifications. Omit when not specified. */
+  branches?: string;
+  salary?: string;
+  stipend?: string;
+};
+
+/** Participating companies, as supplied by the organisers in
+    "TECHKNOW 2026 MEGA JOB FAIR - 19-09-2026". Add or edit rows here;
+    the Events page picks them up and recalculates the totals. */
+export const jobFair = {
+  title: "TECHKNOW 2026 Mega Job Fair",
+  date: "2026-09-19T09:00:00+05:30",
+  dateLabel: "Saturday, 19 September 2026",
+  venue: "Vivekananda Auditorium, Anna University, Chennai",
+  companies: [
+    {
+      name: "IGO Solutions Private Limited",
+      location: "Chennai",
+      total: 10,
+      openings: { regular: 5 },
+      branches: "B.E / B.Tech CSE / IT, BCA, MCA",
+      salary: "2.9 LPA",
+    },
+    {
+      name: "Ashok Leyland Ltd \u2013 Foundry Division",
+      location: "Tiruvallur",
+      total: 10,
+      openings: { internship: 10 },
+      branches: "Mech \u2013 5, Civil \u2013 3, EEE \u2013 2",
+      stipend: "\u20b9 17,000 (apprenticeship)",
+    },
+    {
+      name: "KALS Group of Companies",
+      location: "Pudukkottai",
+      total: 40,
+      openings: { regular: 15, apprenticeship: 25 },
+      branches: "Mech \u2013 15, Instrumentation \u2013 5, EEE \u2013 10, Food Tech \u2013 10",
+      salary: "3 \u2013 4.5 LPA",
+    },
+    {
+      name: "Prime Vector",
+      location: "Electronic City, Karnataka",
+      total: 150,
+      openings: { regular: 50, internship: 50, apprenticeship: 50 },
+      branches: "Any degree",
+      salary: "4.2 \u2013 6 LPA",
+      stipend: "Up to \u20b9 26,000 (\u20b9 16,000 + \u20b9 10,000 performance-based variable pay)",
+    },
+    {
+      name: "Yuzhan Technology India Pvt Ltd (Foxconn Group)",
+      location: "Kanchipuram",
+      total: 300,
+      openings: { apprenticeship: 300 },
+      salary: "2.4 \u2013 3.6 LPA",
+    },
+    {
+      name: "Schaeffler India Limited",
+      location: "Krishnagiri",
+      total: 150,
+      openings: { regular: 100, apprenticeship: 50 },
+      salary: "2.88 \u2013 3.12 LPA",
+    },
+    {
+      name: "TAFE",
+      location: "Chennai",
+      total: 100,
+      openings: { internship: 50, apprenticeship: 50 },
+      branches: "Diploma, ITI, Graduates \u2013 all trades",
+      salary: "2.1 LPA",
+      stipend: "\u20b9 17,500",
+    },
+    {
+      name: "Thejo Engineering Limited",
+      location: "Chennai",
+      total: 60,
+      openings: { regular: 60 },
+      branches:
+        "B.E Mech \u2013 15, B.E Mechatronics \u2013 15, B.E Manufacturing Engg \u2013 10, B.E Industrial Engg \u2013 10",
+      salary: "3.0 LPA",
+    },
+    {
+      name: "Flipped.AI",
+      location: "Chennai",
+      total: 150,
+      openings: { internship: 100, apprenticeship: 50 },
+      branches: "CSE \u2013 30, MBA \u2013 50, AI \u2013 70",
+      stipend: "\u20b9 15,000",
+    },
+    {
+      name: "Tasktel Technologies Pvt Ltd",
+      location: "Chennai",
+      total: 30,
+      openings: { regular: 10, internship: 10, apprenticeship: 10 },
+      branches: "ECE, EEE",
+      stipend: "\u20b9 15,000",
+    },
+    {
+      name: "Next Generation 3D Printers",
+      location: "Chennai",
+      total: 13,
+      openings: { regular: 13, internship: 3 },
+      branches: "Any degree",
+      salary: "1 \u2013 3 LPA",
+    },
+    {
+      name: "Shree Polymer Products",
+      location: "Tiruvallur",
+      total: 6,
+      openings: { regular: 4, apprenticeship: 2 },
+      branches: "Mech \u2013 4, EEE \u2013 1, IT \u2013 1",
+      salary: "2.4 \u2013 3 LPA",
+    },
+  ] satisfies JobFairCompany[],
 };
 
 /* --------------------- Sponsorship categories --------------------------- */
